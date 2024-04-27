@@ -12,7 +12,10 @@ Route::group([
 ], function (Router $router) {
 
     // $router->get('/', 'HomeController@index');
-    $router->resource('/', PacienteController::class);
+    $router->resource('/', ConsultaController::class);
     $router->resource('pacientes', PacienteController::class);
+    $router->resource('prontuarios', ProntuarioController::class);
+    $router->resource('medicos', MedicoController::class);
+    $router->resource('consultas', ConsultaController::class);
 
 });
