@@ -1,0 +1,30 @@
+# railway.yml
+
+services:
+  # Serviço do PHP 7.4
+  php:
+    image: railwayapp/php:7.4
+    version: 7.4.28
+
+  # Serviço do Apache
+  apache:
+    build:
+      env:
+        PHP_VERSION: 7.4
+      ports:
+        - 80:8080
+      # Outras configurações necessárias para o Apache
+    depends_on:
+      - php
+
+  # Serviço do banco de dados PostgreSQL
+  db:
+    image: railwayapp/postgres
+
+  # Outros serviços necessários, como Redis, etc.
+
+# Comandos para implantação
+onDeploy:
+  - command: composer install --ignore-platform-reqs
+  - command: php artisan migrate --force
+  # Outros comandos necessários durante a implantação
