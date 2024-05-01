@@ -14,7 +14,7 @@ return [
     'avatar'                => 'Avatar',
     'list'                  => 'List',
     'new'                   => 'New',
-    'create'                => 'Create',
+    'create'                => 'Inserir',
     'delete'                => 'Delete',
     'remove'                => 'Remove',
     'edit'                  => 'Edit',

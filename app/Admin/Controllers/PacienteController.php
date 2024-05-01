@@ -27,27 +27,20 @@ class PacienteController extends AdminController
     {
         $grid = new Grid(new Paciente());
 
+        $grid->filter(function($filter){
+            $filter->disableIdFilter();
+            $filter->like('Nome', 'Nome');
+        });
+
         $grid->column('Nome', __('Nome'))->sortable();
         $grid->column('Data_Nascimento', __('Data de Nascimento'))->display(function ($date) {
             return \Carbon\Carbon::parse($date)->format('d/m/Y'); // Formato brasileiro de data
         });
-        $grid->column('Genero', __('Gênero'));
-        $grid->column('Endereco', __('Endereço'));
+
         $grid->column('Telefone', __('Telefone'));
         $grid->column('Email', __('Email'));
-        $grid->column('created_at', __('Cadastrado em'))->display(function ($timestamp) {
+        $grid->column('created_at', __('Cadastrado em'))->sortable()->display(function ($timestamp) {
             return \Carbon\Carbon::parse($timestamp)->format('d/m/Y'); // Apenas a data, formato brasileiro
-        });
-
-        $grid->filter(function($filter){
-
-            // Remove the default id filter
-            $filter->disableIdFilter();
-
-            // Add a column filter
-            $filter->like('Nome', 'Nome');
-
-            //... additional filter options
         });
 
         return $grid;
@@ -93,10 +86,10 @@ class PacienteController extends AdminController
 
         $form->text('Nome', __('Nome'));
         $form->date('Data_Nascimento', __('Data de Nascimento'));
-        $form->text('Genero', __('Gênero'));
         $form->text('Endereco', __('Endereço'));
-        $form->text('Telefone', __('Telefone'));
+        $form->phonenumber('Telefone', __('Telefone'))->options(['mask' => '(99) 99999-9999']);
         $form->email('Email', __('Email'));
+        $form->radio('Genero', __('Gênero'))->options(['Masculino' => 'Masculino', 'Feminino' => 'Feminino'])->default('Masculino');
 
         return $form;
     }
