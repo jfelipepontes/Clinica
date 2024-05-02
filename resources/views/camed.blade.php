@@ -82,8 +82,7 @@
           </li> --}}
           <li><a class="nav-link scrollto" href="#about">Sobre</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
-          <li><a class="nav-link scrollto" href="#doctors">Doutores</a></li>
-        </ul>
+          <li><a class="nav-link scrollto" href="{{ url('/clinica') }}">Doutores</a></li>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
@@ -135,14 +134,14 @@
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-calendar"></i>
                     <h4>Agendamento fácil e rápido</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                    <p>Simplificamos o processo de agendamento para tornar sua experiência ainda mais conveniente.</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-dollar-circle"></i>
                     <h4>Consultas e exames a preços acessíveis</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                    <p> Oferecemos uma ampla gama de consultas médicas e exames a preços acessíveis, tornando os cuidados de saúde acessíveis a todos.</p>
                   </div>
                 </div>
               </div>
@@ -301,7 +300,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Make an Appointment</h2>
+          <h2>Agende uma Consulta</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
@@ -354,7 +353,7 @@
             <div class="error-message"></div>
             <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
           </div>
-          <div class="text-center"><button type="submit">Make an Appointment</button></div>
+          <div class="text-center"><button type="submit">Agende uma Consulta</button></div>
         </form>
 
       </div>
