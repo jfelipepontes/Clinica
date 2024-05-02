@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return redirect('/clinica');
+// });
+
+// Route::view('/', 'site/camed');
 Route::get('/', function () {
-    return redirect('/clinica');
+    return view('camed'); // 'landing-page' é o nome do seu arquivo blade
 });

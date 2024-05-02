@@ -7,6 +7,8 @@ use OpenAdmin\Admin\Form;
 use OpenAdmin\Admin\Grid;
 use OpenAdmin\Admin\Show;
 use \App\Models\Consulta;
+use Illuminate\Support\Facades\Auth;
+
 
 class ConsultaController extends AdminController
 {
@@ -35,6 +37,14 @@ class ConsultaController extends AdminController
             $filter->like('status', 'Status');
         });
 
+        // Se o ID do usuário logado for 1, exibe todas as consultas
+        if(Auth::id() == 1) {
+            $grid->model()->with(['paciente', 'medico']);
+        } else {
+            // Caso contrário, exibe apenas as consultas do médico logado
+            $grid->model()->where('medico_id', Auth::id());
+        }
+
         $grid->column('paciente.Nome', __('Paciente'))->sortable();
         $grid->column('medico.name', __('Medico'))->sortable();
         $grid->column('medico.especialidade', __('Especialidade'))->sortable();
@@ -49,6 +59,7 @@ class ConsultaController extends AdminController
 
         return $grid;
     }
+
 
     /**
      * Make a show builder.

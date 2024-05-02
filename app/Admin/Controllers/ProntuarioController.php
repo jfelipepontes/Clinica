@@ -7,6 +7,7 @@ use OpenAdmin\Admin\Form;
 use OpenAdmin\Admin\Grid;
 use OpenAdmin\Admin\Show;
 use \App\Models\Prontuario;
+use Illuminate\Support\Facades\Auth;
 
 class ProntuarioController extends AdminController
 {
@@ -23,32 +24,38 @@ class ProntuarioController extends AdminController
      * @return Grid
      */
     protected function grid()
-    {
-        $grid = new Grid(new Prontuario());
-        // $actions->disableDelete();
-        $grid->actions(function ($actions) {
-            $actions->disableDelete();
-            // $actions->disableEdit();
-            // $actions->disableShow();
-          });
+{
+    $grid = new Grid(new Prontuario());
 
-        $grid->filter(function($filter){
-            $filter->disableIdFilter();
-            $filter->like('id', 'Código');
-            $filter->like('paciente.Nome', 'Paciente');
-            $filter->like('medico.name', 'Doutor');
-        });
+    $grid->filter(function($filter){
+        $filter->disableIdFilter();
+        $filter->like('id', 'Código');
+        $filter->like('paciente.Nome', 'Paciente');
+        $filter->like('medico.name', 'Doutor');
+    });
 
-        $grid->column('id', __('Código'))->sortable();
-
-        $grid->column('paciente.Nome', __('Paciente'))->sortable();
-        $grid->column('medico.name', __('Doutor'))->sortable();
-        $grid->column('medico.especialidade', __('Especialidade'));
-        $grid->column('registro_medico', __('Registro medico'));
-
-
-        return $grid;
+    // Se o ID do usuário logado for 1, exibe todos os prontuários
+    if(Auth::id() == 1) {
+        $grid->model()->with(['paciente', 'medico']);
+    } else {
+        // Caso contrário, exibe apenas os prontuários do médico logado
+        $grid->model()->where('medico_id', Auth::id());
     }
+
+    $grid->column('id', __('Código'))->sortable();
+    $grid->column('paciente.Nome', __('Paciente'))->sortable();
+    $grid->column('medico.name', __('Doutor'))->sortable();
+    $grid->column('registro_medico', __('Registro Médico'));
+
+    return $grid;
+}
+
+
+
+
+
+
+
 
     /**
      * Make a show builder.
