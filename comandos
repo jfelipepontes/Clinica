@@ -1,0 +1,2 @@
+-- Banco de Dados
+    psql -h localhost -p 5432 -U postgres -d clinica -f postgres
