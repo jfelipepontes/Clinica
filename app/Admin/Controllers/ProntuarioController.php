@@ -34,8 +34,16 @@ class ProntuarioController extends AdminController
         $filter->like('medico.name', 'Doutor');
     });
 
+    $allowedIds = [1, 44];
+    if (!in_array(Auth::id(), $allowedIds)) {
+        $grid->actions(function ($actions) {
+            $actions->disableDelete();
+        });
+    }
+
     // Se o ID do usuário logado for 1, exibe todos os prontuários
-    if(Auth::id() == 1) {
+    $allowedIds = [1, 44, 43, 42];
+    if (in_array(Auth::id(), $allowedIds)) {
         $grid->model()->with(['paciente', 'medico']);
     } else {
         // Caso contrário, exibe apenas os prontuários do médico logado
@@ -43,9 +51,10 @@ class ProntuarioController extends AdminController
     }
 
     $grid->column('id', __('Código'))->sortable();
-    $grid->column('paciente.Nome', __('Paciente'))->sortable();
-    $grid->column('medico.name', __('Doutor'))->sortable();
+    $grid->column('paciente.Nome', __('Paciente'));
+    $grid->column('medico.name', __('Doutor'));
     $grid->column('registro_medico', __('Registro Médico'));
+    $grid->model()->orderBy('id', 'desc');
 
     return $grid;
 }

@@ -37,17 +37,25 @@ class ConsultaController extends AdminController
             $filter->like('status', 'Status');
         });
 
+        $allowedIds = [1, 44];
+        if (!in_array(Auth::id(), $allowedIds)) {
+            $grid->actions(function ($actions) {
+                $actions->disableDelete();
+            });
+        }
+
         // Se o ID do usuário logado for 1, exibe todas as consultas
-        if(Auth::id() == 1) {
+        $allowedIds = [1, 44, 43, 42];
+        if (in_array(Auth::id(), $allowedIds)) {
             $grid->model()->with(['paciente', 'medico']);
         } else {
             // Caso contrário, exibe apenas as consultas do médico logado
             $grid->model()->where('medico_id', Auth::id());
         }
 
-        $grid->column('paciente.Nome', __('Paciente'))->sortable();
-        $grid->column('medico.name', __('Medico'))->sortable();
-        $grid->column('medico.especialidade', __('Especialidade'))->sortable();
+        $grid->column('paciente.Nome', __('Paciente'));
+        $grid->column('medico.name', __('Medico'));
+        $grid->column('medico.especialidade', __('Especialidade'));
         $grid->column('data_hora', __('Dia'))->sortable()->display(function ($data_hora) {
             $data_hora = new \DateTime($data_hora);
             return $data_hora->format('d/m/Y H:i');
@@ -56,6 +64,7 @@ class ConsultaController extends AdminController
         $grid->column('observacoes', __('Tipo'))->sortable();
         $grid->column('status', __('Status'))->sortable();
         $grid->column('prontuario_id', __('Prontuario'));
+        $grid->model()->orderBy('data_hora', 'desc');
 
         return $grid;
     }

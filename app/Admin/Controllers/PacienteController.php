@@ -7,6 +7,7 @@ use OpenAdmin\Admin\Form;
 use OpenAdmin\Admin\Grid;
 use OpenAdmin\Admin\Show;
 use \App\Models\Paciente;
+use Illuminate\Support\Facades\Auth;
 
 class PacienteController extends AdminController
 {
@@ -32,6 +33,13 @@ class PacienteController extends AdminController
             $filter->like('Nome', 'Nome');
         });
 
+        $allowedIds = [1, 44];
+        if (!in_array(Auth::id(), $allowedIds)) {
+            $grid->actions(function ($actions) {
+                $actions->disableDelete();
+            });
+        }
+
         $grid->column('Nome', __('Nome'))->sortable();
         $grid->column('Data_Nascimento', __('Data de Nascimento'))->display(function ($date) {
             return \Carbon\Carbon::parse($date)->format('d/m/Y'); // Formato brasileiro de data
@@ -42,6 +50,7 @@ class PacienteController extends AdminController
         $grid->column('created_at', __('Cadastrado em'))->sortable()->display(function ($timestamp) {
             return \Carbon\Carbon::parse($timestamp)->format('d/m/Y'); // Apenas a data, formato brasileiro
         });
+        $grid->model()->orderBy('created_at', 'desc');
 
         return $grid;
     }

@@ -33,12 +33,13 @@ class MedicoController extends AdminController
         });
 
         // $grid->disableDelete();
-        $grid->disableCreation();
+        // $grid->disableCreation();
 
         $grid->model()->where('id', '>', 1);
         $grid->column('name', __('Nome'))->sortable();
         $grid->column('especialidade', __('Especialidade'))->sortable();
         $grid->column('numero_sala', __('Sala'))->sortable();
+        $grid->model()->orderBy('id', 'desc');
 
         return $grid;
     }
@@ -79,15 +80,22 @@ class MedicoController extends AdminController
     {
         $form = new Form(new Medico());
 
-        $form->text('name', __('Nome'));
+        $form->text('name', __('Nome'))->required();
         $form->text('especialidade', __('Especialidade'));
         $form->text('numero_sala','Sala');
-        $form->text('username', __('Login'));
-        // $form->password('password', __('Senha'));
+        $form->text('username', __('Login'))->required();
+        $form->password('password', __('Senha'))->creationRules('required'); // Adiciona regras de validação
         // $form->image('avatar', __('Avatar'));
         // $form->text('remember_token', __('Remember token'));
 
+        // Manipula a senha antes de salvá-la no banco de dados
+        $form->saving(function (Form $form) {
+            if ($form->password) {
+                $form->password = bcrypt($form->password);
+            }
+        });
 
         return $form;
     }
+
 }
