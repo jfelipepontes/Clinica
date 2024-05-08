@@ -30,6 +30,7 @@ class PacienteController extends AdminController
 
         $grid->filter(function($filter){
             $filter->disableIdFilter();
+            $filter->like('Cpf', 'CPF');
             $filter->like('Nome', 'Nome');
         });
 
@@ -40,6 +41,7 @@ class PacienteController extends AdminController
             });
         }
 
+        $grid->column('Cpf', __('CPF'))->sortable();
         $grid->column('Nome', __('Nome'))->sortable();
         $grid->column('Data_Nascimento', __('Data de Nascimento'))->display(function ($date) {
             return \Carbon\Carbon::parse($date)->format('d/m/Y'); // Formato brasileiro de data
@@ -67,7 +69,7 @@ class PacienteController extends AdminController
     {
         $show = new Show(Paciente::findOrFail($id));
 
-        $show->field('id', __('Id'));
+        $show->field('Cpf', __('CPF'));
         $show->field('Nome', __('Nome'));
         $show->field('Data_Nascimento', __('Data de Nascimento'))->as(function ($date) {
             return \Carbon\Carbon::parse($date)->format('d/m/Y'); // Formato brasileiro de data
@@ -93,6 +95,8 @@ class PacienteController extends AdminController
     {
         $form = new Form(new Paciente());
 
+        // $form->text('Cpf', __('CPF'));
+        $form->text('Cpf', __('CPF'))->placeholder('000.000.000-00')->rules('required|string|size:14|regex:/^\d{3}\.\d{3}\.\d{3}-\d{2}$/');
         $form->text('Nome', __('Nome'));
         $form->date('Data_Nascimento', __('Data de Nascimento'));
         $form->text('Endereco', __('Endereço'));

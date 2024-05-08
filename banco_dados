@@ -1,97 +1,11 @@
 --
--- PostgreSQL database cluster dump
---
-
--- Started on 2024-05-02 16:15:27 -03
-
-SET default_transaction_read_only = off;
-
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-
---
--- Roles
---
-
-CREATE ROLE postgres;
-ALTER ROLE postgres WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN REPLICATION BYPASSRLS PASSWORD 'SCRAM-SHA-256$4096:jWw0L6NDnYUcAbJQPDk8GA==$kVU7ALqBpq/cica6arbO+aXZym/M2rMq1p7fq0bXe0Y=:9ufbQw+3PWnpGSQNOmxgyclUAj5AmZ5oOL2hpkHtLfU=';
-
-
-
-
-
-
---
--- Databases
---
-
---
--- Database "template1" dump
---
-
-\connect template1
-
---
 -- PostgreSQL database dump
 --
 
 -- Dumped from database version 14.11 (Ubuntu 14.11-0ubuntu0.22.04.1)
 -- Dumped by pg_dump version 14.11 (Ubuntu 14.11-0ubuntu0.22.04.1)
 
--- Started on 2024-05-02 16:15:27 -03
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
--- Completed on 2024-05-02 16:15:27 -03
-
---
--- PostgreSQL database dump complete
---
-
---
--- Database "clinica" dump
---
-
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 14.11 (Ubuntu 14.11-0ubuntu0.22.04.1)
--- Dumped by pg_dump version 14.11 (Ubuntu 14.11-0ubuntu0.22.04.1)
-
--- Started on 2024-05-02 16:15:27 -03
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- TOC entry 3646 (class 1262 OID 16641)
--- Name: clinica; Type: DATABASE; Schema: -; Owner: postgres
---
-
-CREATE DATABASE clinica WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE = 'pt_BR.UTF-8';
-
-
-ALTER DATABASE clinica OWNER TO postgres;
-
-\connect clinica
+-- Started on 2024-05-08 15:44:08 -03
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -109,7 +23,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 209 (class 1259 OID 16642)
+-- TOC entry 209 (class 1259 OID 16821)
 -- Name: admin_menu; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -129,7 +43,7 @@ CREATE TABLE public.admin_menu (
 ALTER TABLE public.admin_menu OWNER TO postgres;
 
 --
--- TOC entry 210 (class 1259 OID 16649)
+-- TOC entry 210 (class 1259 OID 16828)
 -- Name: admin_menu_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -145,7 +59,7 @@ CREATE SEQUENCE public.admin_menu_id_seq
 ALTER TABLE public.admin_menu_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3647 (class 0 OID 0)
+-- TOC entry 3646 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: admin_menu_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -154,7 +68,7 @@ ALTER SEQUENCE public.admin_menu_id_seq OWNED BY public.admin_menu.id;
 
 
 --
--- TOC entry 211 (class 1259 OID 16650)
+-- TOC entry 211 (class 1259 OID 16829)
 -- Name: admin_operation_log; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -173,7 +87,7 @@ CREATE TABLE public.admin_operation_log (
 ALTER TABLE public.admin_operation_log OWNER TO postgres;
 
 --
--- TOC entry 212 (class 1259 OID 16655)
+-- TOC entry 212 (class 1259 OID 16834)
 -- Name: admin_operation_log_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -189,7 +103,7 @@ CREATE SEQUENCE public.admin_operation_log_id_seq
 ALTER TABLE public.admin_operation_log_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3648 (class 0 OID 0)
+-- TOC entry 3647 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: admin_operation_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -198,7 +112,7 @@ ALTER SEQUENCE public.admin_operation_log_id_seq OWNED BY public.admin_operation
 
 
 --
--- TOC entry 213 (class 1259 OID 16656)
+-- TOC entry 213 (class 1259 OID 16835)
 -- Name: admin_permissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -216,7 +130,7 @@ CREATE TABLE public.admin_permissions (
 ALTER TABLE public.admin_permissions OWNER TO postgres;
 
 --
--- TOC entry 214 (class 1259 OID 16661)
+-- TOC entry 214 (class 1259 OID 16840)
 -- Name: admin_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -232,7 +146,7 @@ CREATE SEQUENCE public.admin_permissions_id_seq
 ALTER TABLE public.admin_permissions_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3649 (class 0 OID 0)
+-- TOC entry 3648 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: admin_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -241,7 +155,7 @@ ALTER SEQUENCE public.admin_permissions_id_seq OWNED BY public.admin_permissions
 
 
 --
--- TOC entry 215 (class 1259 OID 16662)
+-- TOC entry 215 (class 1259 OID 16841)
 -- Name: admin_role_menu; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -256,7 +170,7 @@ CREATE TABLE public.admin_role_menu (
 ALTER TABLE public.admin_role_menu OWNER TO postgres;
 
 --
--- TOC entry 216 (class 1259 OID 16665)
+-- TOC entry 216 (class 1259 OID 16844)
 -- Name: admin_role_permissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -271,7 +185,7 @@ CREATE TABLE public.admin_role_permissions (
 ALTER TABLE public.admin_role_permissions OWNER TO postgres;
 
 --
--- TOC entry 217 (class 1259 OID 16668)
+-- TOC entry 217 (class 1259 OID 16847)
 -- Name: admin_role_users; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -286,7 +200,7 @@ CREATE TABLE public.admin_role_users (
 ALTER TABLE public.admin_role_users OWNER TO postgres;
 
 --
--- TOC entry 218 (class 1259 OID 16671)
+-- TOC entry 218 (class 1259 OID 16850)
 -- Name: admin_roles; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -302,7 +216,7 @@ CREATE TABLE public.admin_roles (
 ALTER TABLE public.admin_roles OWNER TO postgres;
 
 --
--- TOC entry 219 (class 1259 OID 16674)
+-- TOC entry 219 (class 1259 OID 16853)
 -- Name: admin_roles_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -318,7 +232,7 @@ CREATE SEQUENCE public.admin_roles_id_seq
 ALTER TABLE public.admin_roles_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3650 (class 0 OID 0)
+-- TOC entry 3649 (class 0 OID 0)
 -- Dependencies: 219
 -- Name: admin_roles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -327,7 +241,7 @@ ALTER SEQUENCE public.admin_roles_id_seq OWNED BY public.admin_roles.id;
 
 
 --
--- TOC entry 220 (class 1259 OID 16675)
+-- TOC entry 220 (class 1259 OID 16854)
 -- Name: admin_user_permissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -342,7 +256,7 @@ CREATE TABLE public.admin_user_permissions (
 ALTER TABLE public.admin_user_permissions OWNER TO postgres;
 
 --
--- TOC entry 221 (class 1259 OID 16678)
+-- TOC entry 221 (class 1259 OID 16857)
 -- Name: admin_users; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -363,7 +277,7 @@ CREATE TABLE public.admin_users (
 ALTER TABLE public.admin_users OWNER TO postgres;
 
 --
--- TOC entry 222 (class 1259 OID 16683)
+-- TOC entry 222 (class 1259 OID 16862)
 -- Name: admin_users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -379,7 +293,7 @@ CREATE SEQUENCE public.admin_users_id_seq
 ALTER TABLE public.admin_users_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3651 (class 0 OID 0)
+-- TOC entry 3650 (class 0 OID 0)
 -- Dependencies: 222
 -- Name: admin_users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -388,7 +302,7 @@ ALTER SEQUENCE public.admin_users_id_seq OWNED BY public.admin_users.id;
 
 
 --
--- TOC entry 223 (class 1259 OID 16684)
+-- TOC entry 223 (class 1259 OID 16863)
 -- Name: consultas; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -406,7 +320,7 @@ CREATE TABLE public.consultas (
 ALTER TABLE public.consultas OWNER TO postgres;
 
 --
--- TOC entry 224 (class 1259 OID 16689)
+-- TOC entry 224 (class 1259 OID 16868)
 -- Name: consultas_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -422,7 +336,7 @@ CREATE SEQUENCE public.consultas_id_seq
 ALTER TABLE public.consultas_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3652 (class 0 OID 0)
+-- TOC entry 3651 (class 0 OID 0)
 -- Dependencies: 224
 -- Name: consultas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -431,7 +345,7 @@ ALTER SEQUENCE public.consultas_id_seq OWNED BY public.consultas.id;
 
 
 --
--- TOC entry 225 (class 1259 OID 16690)
+-- TOC entry 225 (class 1259 OID 16869)
 -- Name: failed_jobs; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -449,7 +363,7 @@ CREATE TABLE public.failed_jobs (
 ALTER TABLE public.failed_jobs OWNER TO postgres;
 
 --
--- TOC entry 226 (class 1259 OID 16696)
+-- TOC entry 226 (class 1259 OID 16875)
 -- Name: failed_jobs_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -464,7 +378,7 @@ CREATE SEQUENCE public.failed_jobs_id_seq
 ALTER TABLE public.failed_jobs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3653 (class 0 OID 0)
+-- TOC entry 3652 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: failed_jobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -473,7 +387,7 @@ ALTER SEQUENCE public.failed_jobs_id_seq OWNED BY public.failed_jobs.id;
 
 
 --
--- TOC entry 227 (class 1259 OID 16697)
+-- TOC entry 227 (class 1259 OID 16876)
 -- Name: migrations; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -487,7 +401,7 @@ CREATE TABLE public.migrations (
 ALTER TABLE public.migrations OWNER TO postgres;
 
 --
--- TOC entry 228 (class 1259 OID 16700)
+-- TOC entry 228 (class 1259 OID 16879)
 -- Name: migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -503,7 +417,7 @@ CREATE SEQUENCE public.migrations_id_seq
 ALTER TABLE public.migrations_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3654 (class 0 OID 0)
+-- TOC entry 3653 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -512,7 +426,7 @@ ALTER SEQUENCE public.migrations_id_seq OWNED BY public.migrations.id;
 
 
 --
--- TOC entry 229 (class 1259 OID 16701)
+-- TOC entry 229 (class 1259 OID 16880)
 -- Name: paciente; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -525,14 +439,15 @@ CREATE TABLE public.paciente (
     "Telefone" character varying(255),
     "Email" character varying(255),
     created_at timestamp(0) without time zone,
-    updated_at timestamp(0) without time zone
+    updated_at timestamp(0) without time zone,
+    "Cpf" character varying(14)
 );
 
 
 ALTER TABLE public.paciente OWNER TO postgres;
 
 --
--- TOC entry 230 (class 1259 OID 16706)
+-- TOC entry 230 (class 1259 OID 16885)
 -- Name: paciente_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -548,7 +463,7 @@ CREATE SEQUENCE public.paciente_id_seq
 ALTER TABLE public.paciente_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3655 (class 0 OID 0)
+-- TOC entry 3654 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: paciente_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -557,7 +472,7 @@ ALTER SEQUENCE public.paciente_id_seq OWNED BY public.paciente.id;
 
 
 --
--- TOC entry 231 (class 1259 OID 16707)
+-- TOC entry 231 (class 1259 OID 16886)
 -- Name: password_resets; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -571,7 +486,7 @@ CREATE TABLE public.password_resets (
 ALTER TABLE public.password_resets OWNER TO postgres;
 
 --
--- TOC entry 232 (class 1259 OID 16712)
+-- TOC entry 232 (class 1259 OID 16891)
 -- Name: personal_access_tokens; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -591,7 +506,7 @@ CREATE TABLE public.personal_access_tokens (
 ALTER TABLE public.personal_access_tokens OWNER TO postgres;
 
 --
--- TOC entry 233 (class 1259 OID 16717)
+-- TOC entry 233 (class 1259 OID 16896)
 -- Name: personal_access_tokens_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -606,7 +521,7 @@ CREATE SEQUENCE public.personal_access_tokens_id_seq
 ALTER TABLE public.personal_access_tokens_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3656 (class 0 OID 0)
+-- TOC entry 3655 (class 0 OID 0)
 -- Dependencies: 233
 -- Name: personal_access_tokens_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -615,7 +530,7 @@ ALTER SEQUENCE public.personal_access_tokens_id_seq OWNED BY public.personal_acc
 
 
 --
--- TOC entry 234 (class 1259 OID 16718)
+-- TOC entry 234 (class 1259 OID 16897)
 -- Name: prontuarios; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -630,7 +545,7 @@ CREATE TABLE public.prontuarios (
 ALTER TABLE public.prontuarios OWNER TO postgres;
 
 --
--- TOC entry 235 (class 1259 OID 16723)
+-- TOC entry 235 (class 1259 OID 16902)
 -- Name: prontuarios_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -646,7 +561,7 @@ CREATE SEQUENCE public.prontuarios_id_seq
 ALTER TABLE public.prontuarios_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3657 (class 0 OID 0)
+-- TOC entry 3656 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: prontuarios_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -655,7 +570,7 @@ ALTER SEQUENCE public.prontuarios_id_seq OWNED BY public.prontuarios.id;
 
 
 --
--- TOC entry 236 (class 1259 OID 16724)
+-- TOC entry 236 (class 1259 OID 16903)
 -- Name: users; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -674,7 +589,7 @@ CREATE TABLE public.users (
 ALTER TABLE public.users OWNER TO postgres;
 
 --
--- TOC entry 237 (class 1259 OID 16729)
+-- TOC entry 237 (class 1259 OID 16908)
 -- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -689,7 +604,7 @@ CREATE SEQUENCE public.users_id_seq
 ALTER TABLE public.users_id_seq OWNER TO postgres;
 
 --
--- TOC entry 3658 (class 0 OID 0)
+-- TOC entry 3657 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -698,7 +613,7 @@ ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
--- TOC entry 3408 (class 2604 OID 16730)
+-- TOC entry 3408 (class 2604 OID 16909)
 -- Name: admin_menu id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -706,7 +621,7 @@ ALTER TABLE ONLY public.admin_menu ALTER COLUMN id SET DEFAULT nextval('public.a
 
 
 --
--- TOC entry 3409 (class 2604 OID 16731)
+-- TOC entry 3409 (class 2604 OID 16910)
 -- Name: admin_operation_log id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -714,7 +629,7 @@ ALTER TABLE ONLY public.admin_operation_log ALTER COLUMN id SET DEFAULT nextval(
 
 
 --
--- TOC entry 3410 (class 2604 OID 16732)
+-- TOC entry 3410 (class 2604 OID 16911)
 -- Name: admin_permissions id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -722,7 +637,7 @@ ALTER TABLE ONLY public.admin_permissions ALTER COLUMN id SET DEFAULT nextval('p
 
 
 --
--- TOC entry 3411 (class 2604 OID 16733)
+-- TOC entry 3411 (class 2604 OID 16912)
 -- Name: admin_roles id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -730,7 +645,7 @@ ALTER TABLE ONLY public.admin_roles ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 3412 (class 2604 OID 16734)
+-- TOC entry 3412 (class 2604 OID 16913)
 -- Name: admin_users id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -738,7 +653,7 @@ ALTER TABLE ONLY public.admin_users ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 3413 (class 2604 OID 16735)
+-- TOC entry 3413 (class 2604 OID 16914)
 -- Name: consultas id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -746,7 +661,7 @@ ALTER TABLE ONLY public.consultas ALTER COLUMN id SET DEFAULT nextval('public.co
 
 
 --
--- TOC entry 3415 (class 2604 OID 16736)
+-- TOC entry 3415 (class 2604 OID 16915)
 -- Name: failed_jobs id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -754,7 +669,7 @@ ALTER TABLE ONLY public.failed_jobs ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 3416 (class 2604 OID 16737)
+-- TOC entry 3416 (class 2604 OID 16916)
 -- Name: migrations id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -762,7 +677,7 @@ ALTER TABLE ONLY public.migrations ALTER COLUMN id SET DEFAULT nextval('public.m
 
 
 --
--- TOC entry 3417 (class 2604 OID 16738)
+-- TOC entry 3417 (class 2604 OID 16917)
 -- Name: paciente id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -770,7 +685,7 @@ ALTER TABLE ONLY public.paciente ALTER COLUMN id SET DEFAULT nextval('public.pac
 
 
 --
--- TOC entry 3418 (class 2604 OID 16739)
+-- TOC entry 3418 (class 2604 OID 16918)
 -- Name: personal_access_tokens id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -778,7 +693,7 @@ ALTER TABLE ONLY public.personal_access_tokens ALTER COLUMN id SET DEFAULT nextv
 
 
 --
--- TOC entry 3419 (class 2604 OID 16740)
+-- TOC entry 3419 (class 2604 OID 16919)
 -- Name: prontuarios id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -786,7 +701,7 @@ ALTER TABLE ONLY public.prontuarios ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 3420 (class 2604 OID 16741)
+-- TOC entry 3420 (class 2604 OID 16920)
 -- Name: users id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -794,14 +709,12 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 
 
 --
--- TOC entry 3612 (class 0 OID 16642)
+-- TOC entry 3612 (class 0 OID 16821)
 -- Dependencies: 209
 -- Data for Name: admin_menu; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.admin_menu (id, parent_id, "order", title, icon, uri, permission, created_at, updated_at) FROM stdin;
-16	0	3	Consultas	icon-calendar-alt	consultas	\N	2024-04-26 23:44:07	2024-04-26 23:45:22
-14	0	4	Prontuarios	icon-file-invoice	prontuarios	\N	2024-04-26 22:50:23	2024-04-26 23:45:22
 2	0	5	Configurações	icon-laptop-code	\N	\N	\N	2024-04-26 23:45:22
 6	2	6	Menu	icon-bars	auth/menu	\N	\N	2024-04-26 23:45:22
 3	2	7	Usuários	icon-users	auth/users	\N	\N	2024-04-26 23:45:22
@@ -814,12 +727,14 @@ COPY public.admin_menu (id, parent_id, "order", title, icon, uri, permission, cr
 12	8	14	Rotas	icon-list-alt	helpers/routes	\N	2024-04-25 18:39:04	2024-04-26 23:45:23
 7	2	15	Log	icon-history	auth/logs	\N	\N	2024-04-26 23:45:23
 13	0	1	Pacientes	icon-address-card	pacientes	\N	2024-04-25 18:55:31	2024-04-25 21:57:21
-15	0	2	Funcionários	icon-user-md	funcionarios	\N	2024-04-26 23:37:44	2024-04-30 19:07:25
+16	0	2	Consultas	icon-calendar-alt	consultas	\N	2024-04-26 23:44:07	2024-05-04 04:33:45
+14	0	3	Prontuarios	icon-file-invoice	prontuarios	\N	2024-04-26 22:50:23	2024-05-04 04:33:45
+15	0	4	Funcionários	icon-user-md	funcionarios	\N	2024-04-26 23:37:44	2024-05-04 04:33:45
 \.
 
 
 --
--- TOC entry 3614 (class 0 OID 16650)
+-- TOC entry 3614 (class 0 OID 16829)
 -- Dependencies: 211
 -- Data for Name: admin_operation_log; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2279,11 +2194,599 @@ COPY public.admin_operation_log (id, user_id, path, method, ip, input, created_a
 1452	30	clinica/consultas	GET	127.0.0.1	[]	2024-05-01 02:44:13	2024-05-01 02:44:13
 1453	30	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-01 02:44:17	2024-05-01 02:44:17
 1454	30	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-01 02:44:59	2024-05-01 02:44:59
+1455	1	clinica	GET	127.0.0.1	[]	2024-05-03 20:57:56	2024-05-03 20:57:56
+1456	1	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-03 20:58:24	2024-05-03 20:58:24
+1457	1	clinica	GET	127.0.0.1	[]	2024-05-04 01:45:34	2024-05-04 01:45:34
+1458	1	clinica	GET	127.0.0.1	{"_sort":{"column":"data_hora","type":"desc"}}	2024-05-04 01:49:43	2024-05-04 01:49:43
+1459	1	clinica	GET	127.0.0.1	{"_sort":{"column":"data_hora","type":"asc"}}	2024-05-04 01:49:44	2024-05-04 01:49:44
+1460	1	clinica	GET	127.0.0.1	{"_sort":{"column":"paciente.Nome","type":"desc"}}	2024-05-04 01:49:46	2024-05-04 01:49:46
+1461	1	clinica	GET	127.0.0.1	{"_sort":{"column":"paciente.Nome","type":"desc"}}	2024-05-04 01:50:03	2024-05-04 01:50:03
+1462	1	clinica	GET	127.0.0.1	{"_sort":{"column":"paciente.Nome","type":"desc"}}	2024-05-04 01:54:42	2024-05-04 01:54:42
+1463	1	clinica	GET	127.0.0.1	{"_sort":{"column":"paciente.Nome","type":"desc"}}	2024-05-04 01:54:42	2024-05-04 01:54:42
+1464	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 01:54:44	2024-05-04 01:54:44
+1465	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"paciente.Nome","type":"desc"}}	2024-05-04 01:54:47	2024-05-04 01:54:47
+1466	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"paciente.Nome","type":"desc"}}	2024-05-04 01:55:39	2024-05-04 01:55:39
+1467	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"paciente.Nome","type":"desc"}}	2024-05-04 01:55:40	2024-05-04 01:55:40
+1468	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"paciente.Nome","type":"desc"}}	2024-05-04 01:55:43	2024-05-04 01:55:43
+1469	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 01:55:44	2024-05-04 01:55:44
+1470	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 01:55:46	2024-05-04 01:55:46
+1471	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"paciente.nome","type":"desc"}}	2024-05-04 01:55:48	2024-05-04 01:55:48
+1472	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 01:56:15	2024-05-04 01:56:15
+1473	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 01:56:16	2024-05-04 01:56:16
+1474	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"medico.name","type":"desc"}}	2024-05-04 01:56:18	2024-05-04 01:56:18
+1475	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 01:56:23	2024-05-04 01:56:23
+1476	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"data_hora","type":"desc"}}	2024-05-04 01:56:25	2024-05-04 01:56:25
+1477	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"data_hora","type":"asc"}}	2024-05-04 01:56:26	2024-05-04 01:56:26
+1478	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"data_hora","type":"desc"}}	2024-05-04 01:56:27	2024-05-04 01:56:27
+1479	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"data_hora","type":"asc"}}	2024-05-04 01:56:27	2024-05-04 01:56:27
+1480	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"data_hora","type":"desc"}}	2024-05-04 01:56:28	2024-05-04 01:56:28
+1481	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"data_hora","type":"asc"}}	2024-05-04 01:56:29	2024-05-04 01:56:29
+1482	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"data_hora","type":"desc"}}	2024-05-04 01:56:30	2024-05-04 01:56:30
+1483	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"data_hora","type":"asc"}}	2024-05-04 01:56:31	2024-05-04 01:56:31
+1484	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"observacoes","type":"desc"}}	2024-05-04 01:56:33	2024-05-04 01:56:33
+1485	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"observacoes","type":"asc"}}	2024-05-04 01:56:34	2024-05-04 01:56:34
+1486	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"observacoes","type":"desc"}}	2024-05-04 01:56:35	2024-05-04 01:56:35
+1487	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"observacoes","type":"asc"}}	2024-05-04 01:56:35	2024-05-04 01:56:35
+1488	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"medico.especialidade","type":"desc"}}	2024-05-04 01:56:48	2024-05-04 01:56:48
+1489	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 01:56:50	2024-05-04 01:56:50
+1490	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"medico.especialidade","type":"desc"}}	2024-05-04 01:56:51	2024-05-04 01:56:51
+1491	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 01:57:00	2024-05-04 01:57:00
+1492	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"status","type":"desc"}}	2024-05-04 01:57:06	2024-05-04 01:57:06
+1493	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"status","type":"asc"}}	2024-05-04 01:57:07	2024-05-04 01:57:07
+1494	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"status","type":"desc"}}	2024-05-04 01:57:08	2024-05-04 01:57:08
+1495	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"status","type":"asc"}}	2024-05-04 01:57:09	2024-05-04 01:57:09
+1496	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"status","type":"asc"}}	2024-05-04 01:57:47	2024-05-04 01:57:47
+1497	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"data_hora","type":"desc"}}	2024-05-04 01:57:51	2024-05-04 01:57:51
+1498	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"data_hora","type":"asc"}}	2024-05-04 01:57:52	2024-05-04 01:57:52
+1499	1	clinica/consultas	GET	127.0.0.1	{"_sort":{"column":"data_hora","type":"desc"}}	2024-05-04 01:57:56	2024-05-04 01:57:56
+1500	1	clinica/consultas	GET	127.0.0.1	{"paciente":{"Nome":"Hugo"},"medico":{"name":null,"especialidade":null},"data_hora":null,"status":null}	2024-05-04 01:58:01	2024-05-04 01:58:01
+1501	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 01:58:07	2024-05-04 01:58:07
+1502	1	clinica/consultas	GET	127.0.0.1	{"paciente":{"Nome":null},"medico":{"name":"Poly","especialidade":null},"data_hora":null,"status":null}	2024-05-04 01:58:15	2024-05-04 01:58:15
+1503	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 01:58:26	2024-05-04 01:58:26
+1504	1	clinica/consultas	GET	127.0.0.1	{"paciente":{"Nome":null},"medico":{"name":null,"especialidade":"Derm"},"data_hora":null,"status":null}	2024-05-04 01:58:32	2024-05-04 01:58:32
+1505	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 01:58:36	2024-05-04 01:58:36
+1506	1	clinica/pacientes	GET	127.0.0.1	{"_sort":{"column":"Nome","type":"desc"}}	2024-05-04 01:58:37	2024-05-04 01:58:37
+1507	1	clinica/pacientes	GET	127.0.0.1	{"_sort":{"column":"Nome","type":"asc"}}	2024-05-04 01:58:38	2024-05-04 01:58:38
+1508	1	clinica/pacientes	GET	127.0.0.1	{"_sort":{"column":"created_at","type":"desc"}}	2024-05-04 01:58:45	2024-05-04 01:58:45
+1509	1	clinica/pacientes	GET	127.0.0.1	{"_sort":{"column":"created_at","type":"asc"}}	2024-05-04 01:58:46	2024-05-04 01:58:46
+1510	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 01:58:47	2024-05-04 01:58:47
+1511	1	clinica/funcionarios	GET	127.0.0.1	{"_sort":{"column":"name","type":"desc"}}	2024-05-04 01:58:51	2024-05-04 01:58:51
+1512	1	clinica/funcionarios	GET	127.0.0.1	{"_sort":{"column":"name","type":"asc"}}	2024-05-04 01:58:52	2024-05-04 01:58:52
+1513	1	clinica/funcionarios/27/edit	GET	127.0.0.1	[]	2024-05-04 01:59:11	2024-05-04 01:59:11
+1514	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 01:59:18	2024-05-04 01:59:18
+1515	1	clinica/funcionarios	GET	127.0.0.1	{"_sort":{"column":"numero_sala","type":"desc"}}	2024-05-04 01:59:24	2024-05-04 01:59:24
+1516	1	clinica/funcionarios	GET	127.0.0.1	{"_sort":{"column":"numero_sala","type":"asc"}}	2024-05-04 01:59:24	2024-05-04 01:59:24
+1517	1	clinica/funcionarios	GET	127.0.0.1	{"_sort":{"column":"especialidade","type":"desc"}}	2024-05-04 01:59:26	2024-05-04 01:59:26
+1518	1	clinica/funcionarios	GET	127.0.0.1	{"_sort":{"column":"especialidade","type":"asc"}}	2024-05-04 01:59:27	2024-05-04 01:59:27
+1519	1	clinica/funcionarios	GET	127.0.0.1	{"_sort":{"column":"name","type":"desc"}}	2024-05-04 01:59:28	2024-05-04 01:59:28
+1520	1	clinica/funcionarios	GET	127.0.0.1	{"_sort":{"column":"name","type":"asc"}}	2024-05-04 01:59:29	2024-05-04 01:59:29
+1521	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 01:59:36	2024-05-04 01:59:36
+1522	1	clinica/prontuarios	GET	127.0.0.1	{"_sort":{"column":"id","type":"desc"}}	2024-05-04 01:59:37	2024-05-04 01:59:37
+1523	1	clinica/prontuarios	GET	127.0.0.1	{"_sort":{"column":"id","type":"asc"}}	2024-05-04 01:59:38	2024-05-04 01:59:38
+1524	1	clinica/prontuarios	GET	127.0.0.1	{"_sort":{"column":"paciente.Nome","type":"desc"}}	2024-05-04 01:59:39	2024-05-04 01:59:39
+1525	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 01:59:40	2024-05-04 01:59:40
+1526	1	clinica/prontuarios	GET	127.0.0.1	{"_sort":{"column":"medico.name","type":"desc"}}	2024-05-04 01:59:43	2024-05-04 01:59:43
+1527	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 01:59:44	2024-05-04 01:59:44
+1528	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 02:00:20	2024-05-04 02:00:20
+1529	1	clinica/prontuarios	GET	127.0.0.1	{"id":null,"paciente":{"Nome":"JO"},"medico":{"name":null}}	2024-05-04 02:00:31	2024-05-04 02:00:31
+1530	1	clinica/prontuarios	GET	127.0.0.1	{"id":null,"paciente":{"Nome":"Jo"},"medico":{"name":null}}	2024-05-04 02:00:36	2024-05-04 02:00:36
+1531	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 02:01:02	2024-05-04 02:01:02
+1532	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 02:01:06	2024-05-04 02:01:06
+1533	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 02:01:06	2024-05-04 02:01:06
+1534	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 02:01:07	2024-05-04 02:01:07
+1535	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 02:01:08	2024-05-04 02:01:08
+1536	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 02:01:09	2024-05-04 02:01:09
+1537	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 02:01:19	2024-05-04 02:01:19
+1538	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 02:01:24	2024-05-04 02:01:24
+1539	1	clinica/auth/users/create	GET	127.0.0.1	[]	2024-05-04 02:01:28	2024-05-04 02:01:28
+1540	1	clinica/auth/users/create	GET	127.0.0.1	[]	2024-05-04 02:07:15	2024-05-04 02:07:15
+1541	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 02:07:17	2024-05-04 02:07:17
+1542	1	clinica/funcionarios/32	GET	127.0.0.1	[]	2024-05-04 02:07:20	2024-05-04 02:07:20
+1543	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 02:07:34	2024-05-04 02:07:34
+1544	1	clinica/funcionarios/32	GET	127.0.0.1	[]	2024-05-04 02:07:50	2024-05-04 02:07:50
+1545	1	clinica/funcionarios/32	GET	127.0.0.1	[]	2024-05-04 02:08:27	2024-05-04 02:08:27
+1546	1	clinica/funcionarios/32	GET	127.0.0.1	[]	2024-05-04 02:08:58	2024-05-04 02:08:58
+1547	1	clinica/funcionarios/32	GET	127.0.0.1	[]	2024-05-04 02:13:01	2024-05-04 02:13:01
+1548	1	clinica/funcionarios/32	GET	127.0.0.1	[]	2024-05-04 02:13:02	2024-05-04 02:13:02
+1549	1	clinica/funcionarios/32	GET	127.0.0.1	[]	2024-05-04 02:14:03	2024-05-04 02:14:03
+1550	1	clinica/funcionarios/32	GET	127.0.0.1	[]	2024-05-04 02:14:04	2024-05-04 02:14:04
+1551	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 02:15:45	2024-05-04 02:15:45
+1552	1	clinica/auth/users/create	GET	127.0.0.1	[]	2024-05-04 02:15:48	2024-05-04 02:15:48
+1553	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 02:40:40	2024-05-04 02:40:40
+1554	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 02:40:40	2024-05-04 02:40:40
+1555	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 02:40:42	2024-05-04 02:40:42
+1556	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 02:40:42	2024-05-04 02:40:42
+1557	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 02:40:48	2024-05-04 02:40:48
+1558	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 02:40:49	2024-05-04 02:40:49
+1559	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 02:52:38	2024-05-04 02:52:38
+1560	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 02:53:03	2024-05-04 02:53:03
+1561	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 02:53:06	2024-05-04 02:53:06
+1562	1	clinica/funcionarios	POST	127.0.0.1	{"name":"Medi Teste","especialidade":"Pediatra","numero_sala":null,"username":"medi","password":"*****-filtered-out-*****","_token":"Ja0yrPdFQOMrXaRMJW954a5NGsQKswlR4hhTFOoP"}	2024-05-04 02:53:40	2024-05-04 02:53:40
+1563	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 02:53:40	2024-05-04 02:53:40
+1564	1	clinica/funcionarios	POST	127.0.0.1	{"name":"Medi Teste","especialidade":"Pediatra","numero_sala":null,"username":"medi","password":"*****-filtered-out-*****","_token":"Ja0yrPdFQOMrXaRMJW954a5NGsQKswlR4hhTFOoP"}	2024-05-04 02:57:23	2024-05-04 02:57:23
+1565	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 02:57:23	2024-05-04 02:57:23
+1566	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 02:57:30	2024-05-04 02:57:30
+1567	1	clinica/funcionarios	POST	127.0.0.1	{"name":"Teste","especialidade":"Cardio","numero_sala":null,"username":"legi","password":"*****-filtered-out-*****","_token":"Ja0yrPdFQOMrXaRMJW954a5NGsQKswlR4hhTFOoP","_previous_":"http:\\/\\/127.0.0.1:8000\\/clinica\\/funcionarios"}	2024-05-04 02:57:52	2024-05-04 02:57:52
+1568	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 02:57:52	2024-05-04 02:57:52
+1569	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 02:58:41	2024-05-04 02:58:41
+1570	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 02:59:23	2024-05-04 02:59:23
+1571	1	clinica/funcionarios	POST	127.0.0.1	{"name":"test","especialidade":"pisi","numero_sala":null,"username":"poti","password":"*****-filtered-out-*****","_token":"Ja0yrPdFQOMrXaRMJW954a5NGsQKswlR4hhTFOoP"}	2024-05-04 02:59:44	2024-05-04 02:59:44
+1572	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 02:59:44	2024-05-04 02:59:44
+1573	1	clinica/funcionarios	POST	127.0.0.1	{"name":"test","especialidade":"pisi","numero_sala":null,"username":"poti","password":"*****-filtered-out-*****","_token":"Ja0yrPdFQOMrXaRMJW954a5NGsQKswlR4hhTFOoP"}	2024-05-04 03:00:44	2024-05-04 03:00:44
+1574	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 03:00:44	2024-05-04 03:00:44
+1575	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 03:02:26	2024-05-04 03:02:26
+1576	1	clinica/funcionarios	POST	127.0.0.1	{"name":"Testand","especialidade":"remol","numero_sala":"43","username":"mico","password":"*****-filtered-out-*****","_token":"Ja0yrPdFQOMrXaRMJW954a5NGsQKswlR4hhTFOoP"}	2024-05-04 03:02:50	2024-05-04 03:02:50
+1577	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 03:02:50	2024-05-04 03:02:50
+1578	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 03:27:19	2024-05-04 03:27:19
+1579	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 03:27:22	2024-05-04 03:27:22
+1580	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 03:27:56	2024-05-04 03:27:56
+1581	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 03:28:04	2024-05-04 03:28:04
+1582	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 03:28:05	2024-05-04 03:28:05
+1583	1	clinica/funcionarios	POST	127.0.0.1	{"name":"Felipe","especialidade":"Dev","numero_sala":"54","username":"felps","password":"*****-filtered-out-*****","_token":"Ja0yrPdFQOMrXaRMJW954a5NGsQKswlR4hhTFOoP"}	2024-05-04 03:28:26	2024-05-04 03:28:26
+1584	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 03:28:26	2024-05-04 03:28:26
+1585	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 03:34:51	2024-05-04 03:34:51
+1586	1	clinica/funcionarios	POST	127.0.0.1	{"name":"cacho","especialidade":"cabelo","numero_sala":"34","username":"cachos","password":"*****-filtered-out-*****","_token":"Ja0yrPdFQOMrXaRMJW954a5NGsQKswlR4hhTFOoP","_previous_":"http:\\/\\/127.0.0.1:8000\\/clinica\\/funcionarios"}	2024-05-04 03:35:11	2024-05-04 03:35:11
+1587	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 03:35:11	2024-05-04 03:35:11
+1588	1	clinica/funcionarios	POST	127.0.0.1	{"name":"cacho","especialidade":"cabelo","numero_sala":"34","username":"cachos","password":"*****-filtered-out-*****","_token":"Ja0yrPdFQOMrXaRMJW954a5NGsQKswlR4hhTFOoP"}	2024-05-04 03:36:15	2024-05-04 03:36:15
+1589	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 03:36:15	2024-05-04 03:36:15
+1590	1	clinica/funcionarios	POST	127.0.0.1	{"name":"cacho","especialidade":"cabelo","numero_sala":"34","username":"cachos","password":"*****-filtered-out-*****","_token":"Ja0yrPdFQOMrXaRMJW954a5NGsQKswlR4hhTFOoP"}	2024-05-04 03:38:41	2024-05-04 03:38:41
+1591	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 03:38:41	2024-05-04 03:38:41
+1592	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 03:39:31	2024-05-04 03:39:31
+1593	1	clinica/funcionarios	GET	127.0.0.1	{"per_page":"50"}	2024-05-04 03:39:45	2024-05-04 03:39:45
+1594	1	clinica/funcionarios/41/edit	GET	127.0.0.1	[]	2024-05-04 03:40:20	2024-05-04 03:40:20
+1595	1	clinica/funcionarios/41	PUT	127.0.0.1	{"name":"cacho","especialidade":"cabelo","numero_sala":"34","username":"cachos","password":"*****-filtered-out-*****","_token":"Ja0yrPdFQOMrXaRMJW954a5NGsQKswlR4hhTFOoP","_method":"PUT"}	2024-05-04 03:40:29	2024-05-04 03:40:29
+1596	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 03:40:29	2024-05-04 03:40:29
+1597	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 03:40:33	2024-05-04 03:40:33
+1598	1	clinica/funcionarios	GET	127.0.0.1	{"per_page":"50"}	2024-05-04 03:40:37	2024-05-04 03:40:37
+1599	1	clinica/funcionarios/41/edit	GET	127.0.0.1	[]	2024-05-04 03:40:47	2024-05-04 03:40:47
+1600	1	clinica/funcionarios/41	PUT	127.0.0.1	{"name":"cacho","especialidade":"cabelo","numero_sala":"34","username":"cachos","password":"*****-filtered-out-*****","_token":"Ja0yrPdFQOMrXaRMJW954a5NGsQKswlR4hhTFOoP","_method":"PUT"}	2024-05-04 03:41:04	2024-05-04 03:41:04
+1601	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 03:41:04	2024-05-04 03:41:04
+1602	1	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-04 03:41:08	2024-05-04 03:41:08
+1603	41	clinica	GET	127.0.0.1	[]	2024-05-04 03:41:16	2024-05-04 03:41:16
+1604	41	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-04 03:41:25	2024-05-04 03:41:25
+1605	1	clinica	GET	127.0.0.1	[]	2024-05-04 03:41:36	2024-05-04 03:41:36
+1606	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 03:42:15	2024-05-04 03:42:15
+1607	1	clinica/auth/users	GET	127.0.0.1	{"_sort":{"column":"id","type":"desc"}}	2024-05-04 03:42:17	2024-05-04 03:42:17
+1608	1	clinica/auth/users/41	DELETE	127.0.0.1	{"_method":"delete","_token":"U1r8e2fqjNhIhNaK7UkImptGHM1iaX6cVJTFXdrR"}	2024-05-04 03:42:32	2024-05-04 03:42:32
+1609	1	clinica/auth/users	GET	127.0.0.1	{"_sort":{"column":"id","type":"desc"}}	2024-05-04 03:42:33	2024-05-04 03:42:33
+1610	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 03:42:43	2024-05-04 03:42:43
+1611	1	clinica/funcionarios	GET	127.0.0.1	{"per_page":"100"}	2024-05-04 03:42:49	2024-05-04 03:42:49
+1612	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 03:42:53	2024-05-04 03:42:53
+1613	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 03:42:58	2024-05-04 03:42:58
+1614	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 03:43:04	2024-05-04 03:43:04
+1615	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 03:45:00	2024-05-04 03:45:00
+1616	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 03:45:04	2024-05-04 03:45:04
+1617	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 03:45:18	2024-05-04 03:45:18
+1618	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 03:45:19	2024-05-04 03:45:19
+1619	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 03:45:21	2024-05-04 03:45:21
+1620	1	clinica/auth/permissions	GET	127.0.0.1	[]	2024-05-04 03:45:45	2024-05-04 03:45:45
+1621	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 03:47:00	2024-05-04 03:47:00
+1622	1	clinica/consultas/7/edit	GET	127.0.0.1	[]	2024-05-04 03:47:12	2024-05-04 03:47:12
+1623	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 03:47:23	2024-05-04 03:47:23
+1624	1	clinica/consultas/7/edit	GET	127.0.0.1	[]	2024-05-04 03:47:39	2024-05-04 03:47:39
+1625	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 03:47:44	2024-05-04 03:47:44
+1626	1	clinica/consultas/create	GET	127.0.0.1	[]	2024-05-04 03:47:48	2024-05-04 03:47:48
+1627	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 03:47:58	2024-05-04 03:47:58
+1628	1	clinica/auth/permissions	GET	127.0.0.1	[]	2024-05-04 03:48:07	2024-05-04 03:48:07
+1629	1	clinica/auth/permissions/create	GET	127.0.0.1	[]	2024-05-04 03:48:21	2024-05-04 03:48:21
+1630	1	clinica/auth/permissions	GET	127.0.0.1	[]	2024-05-04 03:48:25	2024-05-04 03:48:25
+1631	1	clinica/auth/permissions/create	GET	127.0.0.1	[]	2024-05-04 03:48:45	2024-05-04 03:48:45
+1632	1	clinica/auth/permissions	GET	127.0.0.1	[]	2024-05-04 03:48:49	2024-05-04 03:48:49
+1633	1	clinica/auth/permissions/create	GET	127.0.0.1	[]	2024-05-04 03:48:53	2024-05-04 03:48:53
+1634	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 03:49:17	2024-05-04 03:49:17
+1635	1	clinica/auth/permissions	GET	127.0.0.1	[]	2024-05-04 03:49:24	2024-05-04 03:49:24
+1636	1	clinica/auth/permissions/create	GET	127.0.0.1	[]	2024-05-04 03:49:27	2024-05-04 03:49:27
+1637	1	clinica/auth/permissions	POST	127.0.0.1	{"slug":"funcionarios","name":"Funcionarios","search_terms":null,"http_method":[null],"http_path":"\\/funcionarios\\/","_token":"U1r8e2fqjNhIhNaK7UkImptGHM1iaX6cVJTFXdrR"}	2024-05-04 03:49:53	2024-05-04 03:49:53
+1638	1	clinica/auth/permissions	GET	127.0.0.1	[]	2024-05-04 03:49:54	2024-05-04 03:49:54
+1639	1	clinica/auth/permissions/create	GET	127.0.0.1	[]	2024-05-04 03:50:03	2024-05-04 03:50:03
+1640	1	clinica/auth/permissions	POST	127.0.0.1	{"slug":"crud_funcionarios","name":"Crud_Funcionarios","search_terms":null,"http_method":[null],"http_path":"\\/funcionarios\\/*","_token":"U1r8e2fqjNhIhNaK7UkImptGHM1iaX6cVJTFXdrR"}	2024-05-04 03:50:31	2024-05-04 03:50:31
+1641	1	clinica/auth/permissions	GET	127.0.0.1	[]	2024-05-04 03:50:32	2024-05-04 03:50:32
+1642	1	clinica/auth/permissions/create	GET	127.0.0.1	[]	2024-05-04 03:51:14	2024-05-04 03:51:14
+1643	1	clinica/auth/permissions	POST	127.0.0.1	{"slug":"crud_consulta","name":"Crud_Consulta","search_terms":null,"http_method":[null],"http_path":"\\/crud_consulta\\/*","_token":"U1r8e2fqjNhIhNaK7UkImptGHM1iaX6cVJTFXdrR"}	2024-05-04 03:51:39	2024-05-04 03:51:39
+1644	1	clinica/auth/permissions	GET	127.0.0.1	[]	2024-05-04 03:51:39	2024-05-04 03:51:39
+1645	1	clinica/auth/roles	GET	127.0.0.1	[]	2024-05-04 03:52:17	2024-05-04 03:52:17
+1646	1	clinica/auth/roles/create	GET	127.0.0.1	[]	2024-05-04 03:52:45	2024-05-04 03:52:45
+1647	1	clinica/auth/roles	POST	127.0.0.1	{"slug":"recepcionista","name":"Recepcionista","permissions":["2","3","7","8","9","10","14",null],"_token":"U1r8e2fqjNhIhNaK7UkImptGHM1iaX6cVJTFXdrR"}	2024-05-04 03:54:01	2024-05-04 03:54:01
+1648	1	clinica/auth/roles	GET	127.0.0.1	[]	2024-05-04 03:54:01	2024-05-04 03:54:01
+1649	1	clinica/auth/roles/create	GET	127.0.0.1	[]	2024-05-04 03:54:06	2024-05-04 03:54:06
+1650	1	clinica/auth/roles	POST	127.0.0.1	{"slug":"gerente","name":"Gerente","permissions":["2","3","7","8","9","10","11","12","13","14",null],"_token":"U1r8e2fqjNhIhNaK7UkImptGHM1iaX6cVJTFXdrR"}	2024-05-04 03:54:33	2024-05-04 03:54:33
+1651	1	clinica/auth/roles	GET	127.0.0.1	[]	2024-05-04 03:54:33	2024-05-04 03:54:33
+1652	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 03:54:37	2024-05-04 03:54:37
+1653	1	clinica/auth/users/create	GET	127.0.0.1	[]	2024-05-04 03:54:39	2024-05-04 03:54:39
+1654	1	clinica/auth/users	POST	127.0.0.1	{"username":"Ariane","name":"Ariane","password":"*****-filtered-out-*****","password_confirmation":"12345","roles":["3",null],"search_terms":null,"permissions":[null],"_token":"U1r8e2fqjNhIhNaK7UkImptGHM1iaX6cVJTFXdrR"}	2024-05-04 04:02:01	2024-05-04 04:02:01
+1655	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 04:02:01	2024-05-04 04:02:01
+1656	1	clinica/auth/users/create	GET	127.0.0.1	[]	2024-05-04 04:02:03	2024-05-04 04:02:03
+1657	1	clinica/auth/users	POST	127.0.0.1	{"username":"Maria","name":"Maria","password":"*****-filtered-out-*****","password_confirmation":"12345","roles":["3",null],"search_terms":null,"permissions":[null],"_token":"U1r8e2fqjNhIhNaK7UkImptGHM1iaX6cVJTFXdrR"}	2024-05-04 04:02:36	2024-05-04 04:02:36
+1658	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 04:02:36	2024-05-04 04:02:36
+1659	1	clinica/auth/users	GET	127.0.0.1	{"_sort":{"column":"id","type":"desc"}}	2024-05-04 04:02:37	2024-05-04 04:02:37
+1660	1	clinica/auth/users/create	GET	127.0.0.1	[]	2024-05-04 04:02:47	2024-05-04 04:02:47
+1661	1	clinica/auth/users	POST	127.0.0.1	{"username":"Raquel","name":"Raquel Dias","password":"*****-filtered-out-*****","password_confirmation":"dias","roles":["4",null],"search_terms":null,"permissions":[null],"_token":"U1r8e2fqjNhIhNaK7UkImptGHM1iaX6cVJTFXdrR"}	2024-05-04 04:03:42	2024-05-04 04:03:42
+1662	1	clinica/auth/users/create	GET	127.0.0.1	[]	2024-05-04 04:03:42	2024-05-04 04:03:42
+1663	1	clinica/auth/users	POST	127.0.0.1	{"username":"Raquel","name":"Raquel Dias","password":"*****-filtered-out-*****","password_confirmation":"dias","roles":["4",null],"search_terms":null,"permissions":[null],"_token":"U1r8e2fqjNhIhNaK7UkImptGHM1iaX6cVJTFXdrR"}	2024-05-04 04:04:03	2024-05-04 04:04:03
+1664	1	clinica/auth/users/create	GET	127.0.0.1	[]	2024-05-04 04:04:03	2024-05-04 04:04:03
+1746	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:15:21	2024-05-04 04:15:21
+1747	43	clinica/consultas/create	GET	127.0.0.1	[]	2024-05-04 04:15:36	2024-05-04 04:15:36
+1665	1	clinica/auth/users	POST	127.0.0.1	{"username":"Raquel Dias","name":"Raquel Dias","password":"*****-filtered-out-*****","password_confirmation":"dias","roles":["4",null],"search_terms":null,"permissions":[null],"_token":"U1r8e2fqjNhIhNaK7UkImptGHM1iaX6cVJTFXdrR"}	2024-05-04 04:05:34	2024-05-04 04:05:34
+1666	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 04:05:34	2024-05-04 04:05:34
+1667	1	clinica/auth/users	GET	127.0.0.1	{"_sort":{"column":"id","type":"desc"}}	2024-05-04 04:05:36	2024-05-04 04:05:36
+1668	1	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-04 04:05:46	2024-05-04 04:05:46
+1669	44	clinica	GET	127.0.0.1	[]	2024-05-04 04:05:56	2024-05-04 04:05:56
+1670	44	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:06:02	2024-05-04 04:06:02
+1671	44	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:06:03	2024-05-04 04:06:03
+1672	44	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:06:04	2024-05-04 04:06:04
+1673	44	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:06:04	2024-05-04 04:06:04
+1674	44	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:06:06	2024-05-04 04:06:06
+1675	44	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:06:07	2024-05-04 04:06:07
+1676	44	clinica/pacientes/create	GET	127.0.0.1	[]	2024-05-04 04:06:11	2024-05-04 04:06:11
+1677	44	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:06:13	2024-05-04 04:06:13
+1678	44	clinica/pacientes/6/edit	GET	127.0.0.1	[]	2024-05-04 04:06:14	2024-05-04 04:06:14
+1679	44	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:06:16	2024-05-04 04:06:16
+1680	44	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:06:17	2024-05-04 04:06:17
+1681	44	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:06:20	2024-05-04 04:06:20
+1682	44	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:06:22	2024-05-04 04:06:22
+1683	44	clinica/funcionarios/32/edit	GET	127.0.0.1	[]	2024-05-04 04:06:39	2024-05-04 04:06:39
+1684	44	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:06:41	2024-05-04 04:06:41
+1685	44	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-04 04:06:42	2024-05-04 04:06:42
+1686	44	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:06:49	2024-05-04 04:06:49
+1687	44	clinica/consultas/create	GET	127.0.0.1	[]	2024-05-04 04:06:52	2024-05-04 04:06:52
+1688	44	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:06:58	2024-05-04 04:06:58
+1689	44	clinica/consultas/create	GET	127.0.0.1	[]	2024-05-04 04:07:00	2024-05-04 04:07:00
+1690	44	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:07:01	2024-05-04 04:07:01
+1691	44	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:07:04	2024-05-04 04:07:04
+1692	44	clinica/prontuarios/create	GET	127.0.0.1	[]	2024-05-04 04:07:06	2024-05-04 04:07:06
+1693	44	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:07:07	2024-05-04 04:07:07
+1694	44	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-04 04:07:10	2024-05-04 04:07:10
+1695	1	clinica	GET	127.0.0.1	[]	2024-05-04 04:07:17	2024-05-04 04:07:17
+1696	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:07:29	2024-05-04 04:07:29
+1697	1	clinica/auth/permissions	GET	127.0.0.1	[]	2024-05-04 04:07:32	2024-05-04 04:07:32
+1698	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:07:54	2024-05-04 04:07:54
+1699	1	clinica/consultas/create	GET	127.0.0.1	[]	2024-05-04 04:07:56	2024-05-04 04:07:56
+1700	1	clinica/auth/permissions	GET	127.0.0.1	[]	2024-05-04 04:07:59	2024-05-04 04:07:59
+1701	1	clinica/auth/permissions/14/edit	GET	127.0.0.1	[]	2024-05-04 04:08:05	2024-05-04 04:08:05
+1702	1	clinica/auth/permissions/14	PUT	127.0.0.1	{"slug":"crud_consulta","name":"Crud_Consulta","search_terms":null,"http_method":[null],"http_path":"\\/consultas\\/*","_token":"yh0aPzKf2UN15HywcZ5FGuwptOshsCZOWTaE3bdr","_method":"PUT"}	2024-05-04 04:08:14	2024-05-04 04:08:14
+1703	1	clinica/auth/permissions	GET	127.0.0.1	[]	2024-05-04 04:08:15	2024-05-04 04:08:15
+1704	1	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-04 04:08:18	2024-05-04 04:08:18
+1705	44	clinica	GET	127.0.0.1	[]	2024-05-04 04:08:27	2024-05-04 04:08:27
+1706	44	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:08:29	2024-05-04 04:08:29
+1707	44	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:08:31	2024-05-04 04:08:31
+1708	44	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:08:33	2024-05-04 04:08:33
+1709	44	clinica/consultas/create	GET	127.0.0.1	[]	2024-05-04 04:08:34	2024-05-04 04:08:34
+1710	44	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:08:35	2024-05-04 04:08:35
+1711	44	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-04 04:08:40	2024-05-04 04:08:40
+1712	1	clinica	GET	127.0.0.1	[]	2024-05-04 04:08:47	2024-05-04 04:08:47
+1713	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:08:53	2024-05-04 04:08:53
+1714	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 04:08:57	2024-05-04 04:08:57
+1715	1	clinica/auth/users	GET	127.0.0.1	{"_sort":{"column":"id","type":"desc"}}	2024-05-04 04:08:58	2024-05-04 04:08:58
+1716	1	clinica/auth/users	GET	127.0.0.1	{"_sort":{"column":"id","type":"desc"}}	2024-05-04 04:12:40	2024-05-04 04:12:40
+1717	1	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-04 04:12:44	2024-05-04 04:12:44
+1718	44	clinica	GET	127.0.0.1	[]	2024-05-04 04:12:53	2024-05-04 04:12:53
+1719	44	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:13:04	2024-05-04 04:13:04
+1720	44	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:13:05	2024-05-04 04:13:05
+1721	44	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:13:08	2024-05-04 04:13:08
+1722	44	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:13:09	2024-05-04 04:13:09
+1723	44	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:13:12	2024-05-04 04:13:12
+1724	44	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:13:15	2024-05-04 04:13:15
+1725	44	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:13:16	2024-05-04 04:13:16
+1726	44	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:13:32	2024-05-04 04:13:32
+1727	44	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:13:34	2024-05-04 04:13:34
+1728	44	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:13:37	2024-05-04 04:13:37
+1729	44	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:13:39	2024-05-04 04:13:39
+1730	44	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:14:18	2024-05-04 04:14:18
+1731	44	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:14:21	2024-05-04 04:14:21
+1732	44	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:14:22	2024-05-04 04:14:22
+1733	44	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:14:29	2024-05-04 04:14:29
+1734	44	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:14:31	2024-05-04 04:14:31
+1735	44	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:14:34	2024-05-04 04:14:34
+1736	44	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:14:36	2024-05-04 04:14:36
+1737	44	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:14:37	2024-05-04 04:14:37
+1738	44	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-04 04:14:42	2024-05-04 04:14:42
+1739	43	clinica	GET	127.0.0.1	[]	2024-05-04 04:14:54	2024-05-04 04:14:54
+1740	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:14:58	2024-05-04 04:14:58
+1741	43	clinica/pacientes/create	GET	127.0.0.1	[]	2024-05-04 04:15:02	2024-05-04 04:15:02
+1742	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:15:02	2024-05-04 04:15:02
+1743	43	clinica/pacientes/7/edit	GET	127.0.0.1	[]	2024-05-04 04:15:04	2024-05-04 04:15:04
+1744	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:15:06	2024-05-04 04:15:06
+1745	43	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:15:07	2024-05-04 04:15:07
+1748	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:15:37	2024-05-04 04:15:37
+1749	43	clinica/consultas/7/edit	GET	127.0.0.1	[]	2024-05-04 04:15:38	2024-05-04 04:15:38
+1750	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:15:40	2024-05-04 04:15:40
+1751	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:16:00	2024-05-04 04:16:00
+1752	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:16:04	2024-05-04 04:16:04
+1753	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:16:16	2024-05-04 04:16:16
+1754	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:16:20	2024-05-04 04:16:20
+1755	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:16:22	2024-05-04 04:16:22
+1756	43	clinica/prontuarios/create	GET	127.0.0.1	[]	2024-05-04 04:16:22	2024-05-04 04:16:22
+1757	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:16:23	2024-05-04 04:16:23
+1758	43	clinica/prontuarios/7/edit	GET	127.0.0.1	[]	2024-05-04 04:16:24	2024-05-04 04:16:24
+1759	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:16:25	2024-05-04 04:16:25
+1760	43	clinica/prontuarios/create	GET	127.0.0.1	[]	2024-05-04 04:16:41	2024-05-04 04:16:41
+1761	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:16:42	2024-05-04 04:16:42
+1762	43	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:17:06	2024-05-04 04:17:06
+1763	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:17:08	2024-05-04 04:17:08
+1764	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:17:53	2024-05-04 04:17:53
+1765	43	clinica/prontuarios/7/edit	GET	127.0.0.1	[]	2024-05-04 04:17:56	2024-05-04 04:17:56
+1766	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:17:58	2024-05-04 04:17:58
+1767	43	clinica/prontuarios/create	GET	127.0.0.1	[]	2024-05-04 04:18:02	2024-05-04 04:18:02
+1768	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:18:03	2024-05-04 04:18:03
+1769	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:18:22	2024-05-04 04:18:22
+1770	43	clinica/consultas/create	GET	127.0.0.1	[]	2024-05-04 04:18:23	2024-05-04 04:18:23
+1771	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:18:24	2024-05-04 04:18:24
+1772	43	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:18:26	2024-05-04 04:18:26
+1773	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:18:27	2024-05-04 04:18:27
+1774	43	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:22:09	2024-05-04 04:22:09
+1775	43	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:24:15	2024-05-04 04:24:15
+1776	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:24:17	2024-05-04 04:24:17
+1777	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:24:19	2024-05-04 04:24:19
+1778	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:24:20	2024-05-04 04:24:20
+1779	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:24:21	2024-05-04 04:24:21
+1780	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:24:23	2024-05-04 04:24:23
+1781	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:24:31	2024-05-04 04:24:31
+1782	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:24:33	2024-05-04 04:24:33
+1783	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:24:34	2024-05-04 04:24:34
+1784	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:25:05	2024-05-04 04:25:05
+1785	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:25:51	2024-05-04 04:25:51
+1786	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:25:52	2024-05-04 04:25:52
+1787	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:25:59	2024-05-04 04:25:59
+1788	43	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:26:00	2024-05-04 04:26:00
+1789	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:26:01	2024-05-04 04:26:01
+1790	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:26:01	2024-05-04 04:26:01
+1791	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:26:57	2024-05-04 04:26:57
+1792	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1793	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1794	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1795	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1796	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1797	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1798	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1799	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1800	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1801	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1802	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1803	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1804	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1805	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1806	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1807	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1808	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1809	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1810	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1811	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1812	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:36	2024-05-04 04:27:36
+1813	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:38	2024-05-04 04:27:38
+1814	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:27:43	2024-05-04 04:27:43
+1815	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:28:25	2024-05-04 04:28:25
+1816	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:28:31	2024-05-04 04:28:31
+1817	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:28:32	2024-05-04 04:28:32
+1818	43	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:28:34	2024-05-04 04:28:34
+1819	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:28:35	2024-05-04 04:28:35
+1820	43	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:29:05	2024-05-04 04:29:05
+1821	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:29:06	2024-05-04 04:29:06
+1822	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:29:07	2024-05-04 04:29:07
+1823	43	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-04 04:29:12	2024-05-04 04:29:12
+1824	1	clinica	GET	127.0.0.1	[]	2024-05-04 04:29:19	2024-05-04 04:29:19
+1825	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 04:29:22	2024-05-04 04:29:22
+1826	1	clinica/auth/users	GET	127.0.0.1	{"_sort":{"column":"id","type":"desc"}}	2024-05-04 04:29:25	2024-05-04 04:29:25
+1827	1	clinica/auth/users	GET	127.0.0.1	{"_sort":{"column":"id","type":"asc"}}	2024-05-04 04:29:28	2024-05-04 04:29:28
+1828	1	clinica/auth/users/1/edit	GET	127.0.0.1	[]	2024-05-04 04:29:32	2024-05-04 04:29:32
+1829	1	clinica/auth/users/1	PUT	127.0.0.1	{"username":"felipe","name":"Felipe","password":"*****-filtered-out-*****","password_confirmation":"86365277","roles":["1",null],"search_terms":null,"permissions":[null],"_token":"uPhrsHmjg7ooQVpdY5SJUqBbmy7jFIx5S4td2Q7E","_method":"PUT"}	2024-05-04 04:30:00	2024-05-04 04:30:00
+1830	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 04:30:00	2024-05-04 04:30:00
+1831	1	clinica/auth/users	GET	127.0.0.1	[]	2024-05-04 04:30:04	2024-05-04 04:30:04
+1832	1	clinica/auth/users	GET	127.0.0.1	{"_sort":{"column":"id","type":"desc"}}	2024-05-04 04:30:06	2024-05-04 04:30:06
+1833	1	clinica/auth/users	GET	127.0.0.1	{"_sort":{"column":"id","type":"asc"}}	2024-05-04 04:30:09	2024-05-04 04:30:09
+1834	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:30:20	2024-05-04 04:30:20
+1835	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:30:30	2024-05-04 04:30:30
+1836	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:30:36	2024-05-04 04:30:36
+1837	1	clinica/funcionarios	GET	127.0.0.1	{"_sort":{"column":"especialidade","type":"desc"}}	2024-05-04 04:30:56	2024-05-04 04:30:56
+1838	1	clinica/funcionarios/44/edit	GET	127.0.0.1	[]	2024-05-04 04:31:08	2024-05-04 04:31:08
+1839	1	clinica/funcionarios/44	PUT	127.0.0.1	{"name":"Raquel Dias","especialidade":"Gerente","numero_sala":null,"username":"Raquel Dias","password":"*****-filtered-out-*****","_token":"uPhrsHmjg7ooQVpdY5SJUqBbmy7jFIx5S4td2Q7E","_method":"PUT"}	2024-05-04 04:31:14	2024-05-04 04:31:14
+1840	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:31:14	2024-05-04 04:31:14
+1841	1	clinica/funcionarios	GET	127.0.0.1	{"_sort":{"column":"name","type":"desc"}}	2024-05-04 04:31:19	2024-05-04 04:31:19
+1842	1	clinica/funcionarios	GET	127.0.0.1	{"_sort":{"column":"name","type":"asc"}}	2024-05-04 04:31:20	2024-05-04 04:31:20
+1843	1	clinica/funcionarios	GET	127.0.0.1	{"_sort":{"column":"especialidade","type":"desc"}}	2024-05-04 04:31:22	2024-05-04 04:31:22
+1844	1	clinica/funcionarios/43/edit	GET	127.0.0.1	[]	2024-05-04 04:31:37	2024-05-04 04:31:37
+1845	1	clinica/funcionarios/43	PUT	127.0.0.1	{"name":"Maria","especialidade":"Recepcionista","numero_sala":"Recep\\u00e7\\u00e3o","username":"Maria","password":"*****-filtered-out-*****","_token":"uPhrsHmjg7ooQVpdY5SJUqBbmy7jFIx5S4td2Q7E","_method":"PUT"}	2024-05-04 04:32:10	2024-05-04 04:32:10
+1846	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:32:10	2024-05-04 04:32:10
+1847	1	clinica/funcionarios	GET	127.0.0.1	{"_sort":{"column":"especialidade","type":"desc"}}	2024-05-04 04:32:16	2024-05-04 04:32:16
+1848	1	clinica/funcionarios/42/edit	GET	127.0.0.1	[]	2024-05-04 04:32:19	2024-05-04 04:32:19
+1849	1	clinica/funcionarios/42	PUT	127.0.0.1	{"name":"Ariane","especialidade":"Recepcionista","numero_sala":"Recep\\u00e7\\u00e3o","username":"Ariane","password":"*****-filtered-out-*****","_token":"uPhrsHmjg7ooQVpdY5SJUqBbmy7jFIx5S4td2Q7E","_method":"PUT"}	2024-05-04 04:32:39	2024-05-04 04:32:39
+1850	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:32:39	2024-05-04 04:32:39
+1851	1	clinica/funcionarios	GET	127.0.0.1	{"per_page":"100"}	2024-05-04 04:32:44	2024-05-04 04:32:44
+1852	1	clinica/funcionarios/44/edit	GET	127.0.0.1	[]	2024-05-04 04:33:05	2024-05-04 04:33:05
+1853	1	clinica/funcionarios/44	PUT	127.0.0.1	{"name":"Raquel Dias","especialidade":"Gerente","numero_sala":"Administra\\u00e7\\u00e3o","username":"Raquel Dias","password":"*****-filtered-out-*****","_token":"uPhrsHmjg7ooQVpdY5SJUqBbmy7jFIx5S4td2Q7E","_method":"PUT"}	2024-05-04 04:33:22	2024-05-04 04:33:22
+1854	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:33:22	2024-05-04 04:33:22
+1855	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:33:26	2024-05-04 04:33:26
+1856	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:33:28	2024-05-04 04:33:28
+1857	1	clinica/auth/menu	GET	127.0.0.1	[]	2024-05-04 04:33:34	2024-05-04 04:33:34
+1858	1	clinica/auth/menu	POST	127.0.0.1	{"_order":"[{\\"id\\":\\"13\\"},{\\"id\\":\\"16\\"},{\\"id\\":\\"14\\"},{\\"id\\":\\"15\\"},{\\"id\\":\\"2\\",\\"children\\":[{\\"id\\":\\"6\\"},{\\"id\\":\\"3\\"},{\\"id\\":\\"4\\"},{\\"id\\":\\"5\\"},{\\"id\\":\\"8\\",\\"children\\":[{\\"id\\":\\"9\\"},{\\"id\\":\\"10\\"},{\\"id\\":\\"11\\"},{\\"id\\":\\"12\\"}]},{\\"id\\":\\"7\\"}]}]","_token":"uPhrsHmjg7ooQVpdY5SJUqBbmy7jFIx5S4td2Q7E"}	2024-05-04 04:33:45	2024-05-04 04:33:45
+1859	1	clinica/auth/menu	GET	127.0.0.1	[]	2024-05-04 04:33:45	2024-05-04 04:33:45
+1860	1	clinica/auth/menu	GET	127.0.0.1	[]	2024-05-04 04:33:48	2024-05-04 04:33:48
+1861	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:33:53	2024-05-04 04:33:53
+1862	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:33:54	2024-05-04 04:33:54
+1863	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:33:56	2024-05-04 04:33:56
+1864	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:33:57	2024-05-04 04:33:57
+1865	1	clinica/auth/menu	GET	127.0.0.1	[]	2024-05-04 04:34:03	2024-05-04 04:34:03
+1866	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:34:07	2024-05-04 04:34:07
+1867	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:34:14	2024-05-04 04:34:14
+1868	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:34:36	2024-05-04 04:34:36
+1869	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:36:24	2024-05-04 04:36:24
+1870	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:37:25	2024-05-04 04:37:25
+1871	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:37:26	2024-05-04 04:37:26
+1872	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:40:16	2024-05-04 04:40:16
+1873	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:44:11	2024-05-04 04:44:11
+1874	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:46:41	2024-05-04 04:46:41
+1875	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:49:31	2024-05-04 04:49:31
+1876	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-04 04:49:41	2024-05-04 04:49:41
+1877	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:49:44	2024-05-04 04:49:44
+1878	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:49:46	2024-05-04 04:49:46
+1879	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-04 04:50:24	2024-05-04 04:50:24
+1880	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:50:27	2024-05-04 04:50:27
+1881	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-04 04:51:09	2024-05-04 04:51:09
+1882	1	clinica/funcionarios	GET	127.0.0.1	{"per_page":"30"}	2024-05-04 04:51:39	2024-05-04 04:51:39
+1883	1	clinica/funcionarios	GET	127.0.0.1	{"per_page":"50"}	2024-05-04 04:51:44	2024-05-04 04:51:44
+1884	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-04 04:51:59	2024-05-04 04:51:59
+1885	1	clinica	GET	127.0.0.1	[]	2024-05-06 11:22:48	2024-05-06 11:22:48
+1886	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 11:22:52	2024-05-06 11:22:52
+1887	1	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-06 11:23:01	2024-05-06 11:23:01
+1888	1	clinica	GET	127.0.0.1	[]	2024-05-06 11:23:31	2024-05-06 11:23:31
+1889	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 11:23:35	2024-05-06 11:23:35
+1890	1	clinica/funcionarios/43/edit	GET	127.0.0.1	[]	2024-05-06 11:23:40	2024-05-06 11:23:40
+1891	1	clinica/funcionarios/43	PUT	127.0.0.1	{"name":"Maria","especialidade":"Recepcionista","numero_sala":"Recep\\u00e7\\u00e3o","username":"Maria","password":"*****-filtered-out-*****","_token":"AQUC1zZaXvACkXZJE7bdiYcd7X9OgO72i8zHRvKk","_method":"PUT"}	2024-05-06 11:23:46	2024-05-06 11:23:46
+1892	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 11:23:46	2024-05-06 11:23:46
+1893	1	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-06 11:23:49	2024-05-06 11:23:49
+1894	43	clinica	GET	127.0.0.1	[]	2024-05-06 11:24:00	2024-05-06 11:24:00
+1895	43	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-06 11:24:06	2024-05-06 11:24:06
+1896	43	clinica	GET	127.0.0.1	[]	2024-05-06 11:25:08	2024-05-06 11:25:08
+1897	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-06 11:25:18	2024-05-06 11:25:18
+1898	43	clinica/pacientes/create	GET	127.0.0.1	[]	2024-05-06 11:25:30	2024-05-06 11:25:30
+1899	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-06 11:25:52	2024-05-06 11:25:52
+1900	43	clinica/pacientes	GET	127.0.0.1	[]	2024-05-06 11:25:52	2024-05-06 11:25:52
+1901	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-06 11:26:03	2024-05-06 11:26:03
+1902	43	clinica/consultas/create	GET	127.0.0.1	[]	2024-05-06 11:26:07	2024-05-06 11:26:07
+1903	43	clinica/consultas	POST	127.0.0.1	{"data_hora":"2024-05-08 15:15","paciente_id":"7","search_terms":null,"medico_id":"6","observacoes":null,"status":"Agendada","_token":"OogUeEpQ13CcpiZNchXZRlzqMAhEpqlbgtDsI7MR"}	2024-05-06 11:27:07	2024-05-06 11:27:07
+1904	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-06 11:27:07	2024-05-06 11:27:07
+1905	43	clinica/consultas/8/edit	GET	127.0.0.1	[]	2024-05-06 11:27:14	2024-05-06 11:27:14
+1906	43	clinica/consultas/8	PUT	127.0.0.1	{"data_hora":"2024-05-08 15:15","paciente_id":"7","search_terms":null,"medico_id":"6","observacoes":"Exame de Rotina","status":"Agendada","_token":"OogUeEpQ13CcpiZNchXZRlzqMAhEpqlbgtDsI7MR","_method":"PUT"}	2024-05-06 11:27:22	2024-05-06 11:27:22
+1907	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-06 11:27:22	2024-05-06 11:27:22
+1908	43	clinica/consultas/5/edit	GET	127.0.0.1	[]	2024-05-06 11:27:42	2024-05-06 11:27:42
+1909	43	clinica/consultas/5	PUT	127.0.0.1	{"data_hora":"2024-05-03 14:00","paciente_id":"6","search_terms":null,"medico_id":"6","observacoes":"Exame de Rotina","status":"Concluida","_token":"OogUeEpQ13CcpiZNchXZRlzqMAhEpqlbgtDsI7MR","_method":"PUT"}	2024-05-06 11:28:12	2024-05-06 11:28:12
+1910	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-06 11:28:12	2024-05-06 11:28:12
+1911	43	clinica/consultas	GET	127.0.0.1	{"paciente":{"Nome":"Jo\\u00e3o"},"medico":{"name":null,"especialidade":null},"data_hora":null,"status":null}	2024-05-06 11:28:39	2024-05-06 11:28:39
+1912	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-06 11:28:43	2024-05-06 11:28:43
+1913	43	clinica/consultas	GET	127.0.0.1	{"paciente":{"Nome":"Joao"},"medico":{"name":null,"especialidade":null},"data_hora":null,"status":null}	2024-05-06 11:28:56	2024-05-06 11:28:56
+1914	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-06 11:29:05	2024-05-06 11:29:05
+1915	43	clinica/consultas	GET	127.0.0.1	{"paciente":{"Nome":null},"medico":{"name":"Henriqu","especialidade":null},"data_hora":null,"status":null}	2024-05-06 11:29:17	2024-05-06 11:29:17
+1916	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-06 11:29:47	2024-05-06 11:29:47
+1917	43	clinica/consultas	GET	127.0.0.1	[]	2024-05-06 11:29:59	2024-05-06 11:29:59
+1918	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-06 11:30:15	2024-05-06 11:30:15
+1919	43	clinica/prontuarios/create	GET	127.0.0.1	[]	2024-05-06 11:30:24	2024-05-06 11:30:24
+1920	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-06 11:30:26	2024-05-06 11:30:26
+1921	43	clinica/prontuarios/8/edit	GET	127.0.0.1	[]	2024-05-06 11:30:30	2024-05-06 11:30:30
+1922	43	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-06 11:30:31	2024-05-06 11:30:31
+1923	43	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 11:31:52	2024-05-06 11:31:52
+1924	43	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-06 11:32:09	2024-05-06 11:32:09
+1925	1	clinica	GET	127.0.0.1	[]	2024-05-06 11:32:34	2024-05-06 11:32:34
+1926	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 11:32:37	2024-05-06 11:32:37
+1927	1	clinica/funcionarios/44/edit	GET	127.0.0.1	[]	2024-05-06 11:32:39	2024-05-06 11:32:39
+1928	1	clinica/funcionarios/44	PUT	127.0.0.1	{"name":"Raquel Dias","especialidade":"Gerente","numero_sala":"Administra\\u00e7\\u00e3o","username":"Raquel Dias","password":"*****-filtered-out-*****","_token":"D87fm7IUQeeViRh1VUb4R7udMkbV6JFSGa5hNRIb","_method":"PUT"}	2024-05-06 11:32:51	2024-05-06 11:32:51
+1929	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 11:32:52	2024-05-06 11:32:52
+1930	1	clinica/auth/logout	GET	127.0.0.1	[]	2024-05-06 11:32:55	2024-05-06 11:32:55
+1931	44	clinica	GET	127.0.0.1	[]	2024-05-06 11:33:04	2024-05-06 11:33:04
+1932	44	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 11:33:22	2024-05-06 11:33:22
+1933	44	clinica/funcionarios/32/edit	GET	127.0.0.1	[]	2024-05-06 11:33:46	2024-05-06 11:33:46
+1934	44	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 11:33:54	2024-05-06 11:33:54
+1935	44	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-06 11:33:58	2024-05-06 11:33:58
+1936	44	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 11:34:10	2024-05-06 11:34:10
+1937	44	clinica/funcionarios/43/edit	GET	127.0.0.1	[]	2024-05-06 11:34:15	2024-05-06 11:34:15
+1938	44	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 11:34:23	2024-05-06 11:34:23
+1939	1	clinica	GET	127.0.0.1	[]	2024-05-06 12:03:53	2024-05-06 12:03:53
+1940	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 12:04:05	2024-05-06 12:04:05
+1941	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-06 12:04:28	2024-05-06 12:04:28
+1942	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 12:05:03	2024-05-06 12:05:03
+1943	1	clinica/funcionarios/32/edit	GET	127.0.0.1	[]	2024-05-06 12:05:09	2024-05-06 12:05:09
+1944	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 12:05:13	2024-05-06 12:05:13
+1945	1	clinica/funcionarios/32/edit	GET	127.0.0.1	[]	2024-05-06 12:05:16	2024-05-06 12:05:16
+1946	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 12:05:33	2024-05-06 12:05:33
+1947	1	clinica/funcionarios/create	GET	127.0.0.1	[]	2024-05-06 12:05:39	2024-05-06 12:05:39
+1948	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 12:05:49	2024-05-06 12:05:49
+1949	1	clinica/funcionarios/32/edit	GET	127.0.0.1	[]	2024-05-06 12:05:57	2024-05-06 12:05:57
+1950	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 12:06:03	2024-05-06 12:06:03
+1951	1	clinica/funcionarios	GET	127.0.0.1	{"name":"J","especialidade":null}	2024-05-06 12:06:15	2024-05-06 12:06:15
+1952	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 12:06:25	2024-05-06 12:06:25
+1953	1	clinica/funcionarios	GET	127.0.0.1	{"name":null,"especialidade":"Dermatologia"}	2024-05-06 12:06:32	2024-05-06 12:06:32
+1954	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 12:06:50	2024-05-06 12:06:50
+1955	1	clinica/funcionarios/32/edit	GET	127.0.0.1	[]	2024-05-06 12:07:00	2024-05-06 12:07:00
+1956	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-06 12:07:02	2024-05-06 12:07:02
+1957	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-06 12:10:09	2024-05-06 12:10:09
+1958	1	clinica	GET	127.0.0.1	[]	2024-05-08 16:52:25	2024-05-08 16:52:25
+1959	1	clinica	GET	127.0.0.1	[]	2024-05-08 17:55:47	2024-05-08 17:55:47
+1960	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 17:55:50	2024-05-08 17:55:50
+1961	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-08 17:55:55	2024-05-08 17:55:55
+1962	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 17:56:03	2024-05-08 17:56:03
+1963	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 17:57:23	2024-05-08 17:57:23
+1964	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 17:58:12	2024-05-08 17:58:12
+1965	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 17:59:41	2024-05-08 17:59:41
+1966	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:00:23	2024-05-08 18:00:23
+1967	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:00:49	2024-05-08 18:00:49
+1968	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:04:59	2024-05-08 18:04:59
+1969	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:06:34	2024-05-08 18:06:34
+1970	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:06:58	2024-05-08 18:06:58
+1971	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-08 18:07:01	2024-05-08 18:07:01
+1972	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:07:03	2024-05-08 18:07:03
+1973	1	clinica/funcionarios	GET	127.0.0.1	[]	2024-05-08 18:07:04	2024-05-08 18:07:04
+1974	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-08 18:07:07	2024-05-08 18:07:07
+1975	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:07:08	2024-05-08 18:07:08
+1976	1	clinica/consultas/8	GET	127.0.0.1	[]	2024-05-08 18:07:22	2024-05-08 18:07:22
+1977	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:07:46	2024-05-08 18:07:46
+1978	1	clinica/pacientes/create	GET	127.0.0.1	[]	2024-05-08 18:07:51	2024-05-08 18:07:51
+1979	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:07:54	2024-05-08 18:07:54
+1980	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:07:55	2024-05-08 18:07:55
+1981	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-08 18:08:08	2024-05-08 18:08:08
+1982	1	clinica/prontuarios/8	GET	127.0.0.1	[]	2024-05-08 18:08:11	2024-05-08 18:08:11
+1983	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:08:38	2024-05-08 18:08:38
+1984	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:13:53	2024-05-08 18:13:53
+1985	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:14:25	2024-05-08 18:14:25
+1986	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:14:42	2024-05-08 18:14:42
+1987	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:15:35	2024-05-08 18:15:35
+1988	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:16:22	2024-05-08 18:16:22
+1989	1	clinica/pacientes/7	GET	127.0.0.1	[]	2024-05-08 18:16:28	2024-05-08 18:16:28
+1990	1	clinica/pacientes/7	GET	127.0.0.1	[]	2024-05-08 18:17:04	2024-05-08 18:17:04
+1991	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:17:23	2024-05-08 18:17:23
+1992	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:18:04	2024-05-08 18:18:04
+1993	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:20:30	2024-05-08 18:20:30
+1994	1	clinica/pacientes/create	GET	127.0.0.1	[]	2024-05-08 18:20:31	2024-05-08 18:20:31
+1995	1	clinica/pacientes	POST	127.0.0.1	{"CPF":"70617578419","Nome":null,"Data_Nascimento":null,"Endereco":null,"Telefone":null,"Email":null,"Genero":"Masculino","_token":"jiv75toEz5FCTs1Jo5D9Wo4OxI6dGfcijUGBVWoZ"}	2024-05-08 18:20:51	2024-05-08 18:20:51
+1996	1	clinica/pacientes/create	GET	127.0.0.1	[]	2024-05-08 18:20:51	2024-05-08 18:20:51
+1997	1	clinica/pacientes/create	GET	127.0.0.1	[]	2024-05-08 18:23:24	2024-05-08 18:23:24
+1998	1	clinica/pacientes/create	GET	127.0.0.1	[]	2024-05-08 18:24:21	2024-05-08 18:24:21
+1999	1	clinica/pacientes/create	GET	127.0.0.1	[]	2024-05-08 18:25:30	2024-05-08 18:25:30
+2000	1	clinica/pacientes/create	GET	127.0.0.1	[]	2024-05-08 18:29:55	2024-05-08 18:29:55
+2001	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:30:23	2024-05-08 18:30:23
+2002	1	clinica/pacientes/7/edit	GET	127.0.0.1	[]	2024-05-08 18:30:29	2024-05-08 18:30:29
+2003	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:30:45	2024-05-08 18:30:45
+2004	1	clinica/pacientes/7	GET	127.0.0.1	[]	2024-05-08 18:30:46	2024-05-08 18:30:46
+2005	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:30:51	2024-05-08 18:30:51
+2006	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:31:35	2024-05-08 18:31:35
+2007	1	clinica/pacientes/7/edit	GET	127.0.0.1	[]	2024-05-08 18:31:38	2024-05-08 18:31:38
+2008	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:31:48	2024-05-08 18:31:48
+2009	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:31:50	2024-05-08 18:31:50
+2010	1	clinica/pacientes/7/edit	GET	127.0.0.1	[]	2024-05-08 18:31:52	2024-05-08 18:31:52
+2011	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:32:16	2024-05-08 18:32:16
+2012	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:32:17	2024-05-08 18:32:17
+2013	1	clinica/pacientes/7/edit	GET	127.0.0.1	[]	2024-05-08 18:32:19	2024-05-08 18:32:19
+2014	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:32:37	2024-05-08 18:32:37
+2015	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:32:38	2024-05-08 18:32:38
+2016	1	clinica/pacientes/7/edit	GET	127.0.0.1	[]	2024-05-08 18:32:40	2024-05-08 18:32:40
+2017	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:32:51	2024-05-08 18:32:51
+2018	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:33:12	2024-05-08 18:33:12
+2019	1	clinica/consultas/create	GET	127.0.0.1	[]	2024-05-08 18:33:14	2024-05-08 18:33:14
+2020	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:34:28	2024-05-08 18:34:28
+2021	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:34:38	2024-05-08 18:34:38
+2022	1	clinica/consultas	GET	127.0.0.1	{"paciente":{"Cpf":"123.","Nome":null},"medico":{"name":null,"especialidade":null},"data_hora":null,"status":null}	2024-05-08 18:34:49	2024-05-08 18:34:49
+2023	1	clinica/consultas	GET	127.0.0.1	{"paciente":{"Cpf":"01","Nome":null},"medico":{"name":null,"especialidade":null},"data_hora":null,"status":null}	2024-05-08 18:35:04	2024-05-08 18:35:04
+2024	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:35:13	2024-05-08 18:35:13
+2025	1	clinica/pacientes	GET	127.0.0.1	[]	2024-05-08 18:35:20	2024-05-08 18:35:20
+2026	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:35:33	2024-05-08 18:35:33
+2027	1	clinica/consultas/8	GET	127.0.0.1	[]	2024-05-08 18:36:08	2024-05-08 18:36:08
+2028	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:36:14	2024-05-08 18:36:14
+2029	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-08 18:36:29	2024-05-08 18:36:29
+2030	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:36:45	2024-05-08 18:36:45
+2031	1	clinica/consultas/7	GET	127.0.0.1	[]	2024-05-08 18:36:58	2024-05-08 18:36:58
+2032	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:37:05	2024-05-08 18:37:05
+2033	1	clinica/consultas/8/edit	GET	127.0.0.1	[]	2024-05-08 18:37:09	2024-05-08 18:37:09
+2034	1	clinica/consultas	GET	127.0.0.1	[]	2024-05-08 18:37:25	2024-05-08 18:37:25
+2035	1	clinica/consultas/7	GET	127.0.0.1	[]	2024-05-08 18:38:17	2024-05-08 18:38:17
+2036	1	clinica/consultas/7	GET	127.0.0.1	[]	2024-05-08 18:38:26	2024-05-08 18:38:26
+2037	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-08 18:38:29	2024-05-08 18:38:29
+2038	1	clinica/prontuarios/8	GET	127.0.0.1	[]	2024-05-08 18:38:32	2024-05-08 18:38:32
+2039	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-08 18:39:51	2024-05-08 18:39:51
+2040	1	clinica/prontuarios/8	GET	127.0.0.1	[]	2024-05-08 18:40:08	2024-05-08 18:40:08
+2041	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-08 18:40:10	2024-05-08 18:40:10
+2042	1	clinica/prontuarios	GET	127.0.0.1	[]	2024-05-08 18:40:22	2024-05-08 18:40:22
 \.
 
 
 --
--- TOC entry 3616 (class 0 OID 16656)
+-- TOC entry 3616 (class 0 OID 16835)
 -- Dependencies: 213
 -- Data for Name: admin_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2300,11 +2803,14 @@ COPY public.admin_permissions (id, name, slug, http_method, http_path, created_a
 9	Consultas	consultas		/consultas/	2024-04-30 21:51:48	2024-04-30 21:52:08
 10	Prontuario	prontuario		/prontuarios/	2024-04-30 21:53:45	2024-04-30 21:54:05
 11	Cadstrar ou editar Prontuarios	crud_prontuario		/prontuarios/*	2024-04-30 21:54:54	2024-04-30 21:54:54
+12	Funcionarios	funcionarios		/funcionarios/	2024-05-04 03:49:54	2024-05-04 03:49:54
+13	Crud_Funcionarios	crud_funcionarios		/funcionarios/*	2024-05-04 03:50:31	2024-05-04 03:50:31
+14	Crud_Consulta	crud_consulta		/consultas/*	2024-05-04 03:51:39	2024-05-04 04:08:15
 \.
 
 
 --
--- TOC entry 3618 (class 0 OID 16662)
+-- TOC entry 3618 (class 0 OID 16841)
 -- Dependencies: 215
 -- Data for Name: admin_role_menu; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2315,7 +2821,7 @@ COPY public.admin_role_menu (role_id, menu_id, created_at, updated_at) FROM stdi
 
 
 --
--- TOC entry 3619 (class 0 OID 16665)
+-- TOC entry 3619 (class 0 OID 16844)
 -- Dependencies: 216
 -- Data for Name: admin_role_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2327,11 +2833,28 @@ COPY public.admin_role_permissions (role_id, permission_id, created_at, updated_
 2	10	\N	\N
 2	11	\N	\N
 2	2	\N	\N
+3	2	\N	\N
+3	3	\N	\N
+3	7	\N	\N
+3	8	\N	\N
+3	9	\N	\N
+3	10	\N	\N
+3	14	\N	\N
+4	2	\N	\N
+4	3	\N	\N
+4	7	\N	\N
+4	8	\N	\N
+4	9	\N	\N
+4	10	\N	\N
+4	11	\N	\N
+4	12	\N	\N
+4	13	\N	\N
+4	14	\N	\N
 \.
 
 
 --
--- TOC entry 3620 (class 0 OID 16668)
+-- TOC entry 3620 (class 0 OID 16847)
 -- Dependencies: 217
 -- Data for Name: admin_role_users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2366,11 +2889,14 @@ COPY public.admin_role_users (role_id, user_id, created_at, updated_at) FROM std
 2	30	\N	\N
 2	31	\N	\N
 2	32	\N	\N
+3	42	\N	\N
+3	43	\N	\N
+4	44	\N	\N
 \.
 
 
 --
--- TOC entry 3621 (class 0 OID 16671)
+-- TOC entry 3621 (class 0 OID 16850)
 -- Dependencies: 218
 -- Data for Name: admin_roles; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2378,11 +2904,13 @@ COPY public.admin_role_users (role_id, user_id, created_at, updated_at) FROM std
 COPY public.admin_roles (id, name, slug, created_at, updated_at) FROM stdin;
 1	Administrator	administrator	2024-04-25 18:29:49	2024-04-25 18:29:49
 2	Médico	medico	2024-04-25 19:28:13	2024-04-25 19:28:13
+3	Recepcionista	recepcionista	2024-05-04 03:54:01	2024-05-04 03:54:01
+4	Gerente	gerente	2024-05-04 03:54:33	2024-05-04 03:54:33
 \.
 
 
 --
--- TOC entry 3623 (class 0 OID 16675)
+-- TOC entry 3623 (class 0 OID 16854)
 -- Dependencies: 220
 -- Data for Name: admin_user_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2392,59 +2920,63 @@ COPY public.admin_user_permissions (user_id, permission_id, created_at, updated_
 
 
 --
--- TOC entry 3624 (class 0 OID 16678)
+-- TOC entry 3624 (class 0 OID 16857)
 -- Dependencies: 221
 -- Data for Name: admin_users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.admin_users (id, username, password, name, avatar, remember_token, created_at, updated_at, especialidade, numero_sala) FROM stdin;
-1	admin	$2y$10$HZ8Is1O61mhC7gh0mCKbz.D0mQLq9pgxe5u2TnLMCt6wAzvrHjYp.	Administrator	\N	iCf0WfkswzKDO9MgOmYRVp1Pe9KGU7WEf6IXlb6vCuXivvnItgMWtgtmp0dJ	2024-04-25 18:29:49	2024-04-25 18:29:49	Administrador	\N
-32	Dagjane	$2y$10$NwxdIU49lDn2mXPjm.G3Ae995wuoq8DmBkaSw6JLpS1bVvTad9eYq	Dagjane Frazão	\N	\N	2024-04-30 20:26:37	2024-04-30 20:26:37	Pneumologia	\N
-31	Edvaldo	$2y$10$huvxA3JyL.3XyJE3LWi/k.25z/xZ3ZqyVPH4qhwAQWBaldkkvQRDK	Edvaldo Nóbrega	\N	\N	2024-04-30 20:26:06	2024-04-30 20:26:06	Coloproctologia	\N
-29	Raquel	$2y$10$ido84vWg7v4aKDi41KzgF.EbdqLsBeQD9GWF4gTl.EYVn0D78ps8y	Raquel Feliciano	\N	\N	2024-04-30 20:24:32	2024-04-30 20:24:32	Dermatologia	\N
-28	Caroline	$2y$10$LBA/KQMIKQ4yyfcfKyxVsuCnN.NSNIRmBz3MqNHy5Q8jQeIg6yFZ2	Caroline Nunes	\N	\N	2024-04-30 20:24:10	2024-04-30 20:24:10	Fisioterapia	\N
-26	Tassiane	$2y$10$qA3pMVJQx0RsFByYJrXpI.aj13JzpdMB0OY13UCWZH0jfp99dDQ7a	Tassiane Oliveira	\N	\N	2024-04-30 20:23:03	2024-04-30 20:23:03	Pediatria	\N
-27	Adriane	$2y$10$lHUPYmP1pqoIakdo/hjLpunKnt/D8MuuxSJ4x8uIILOaeC/Vo7ClG	Adriane Duarte	\N	\N	2024-04-30 20:23:29	2024-04-30 20:23:29	Pediatria	\N
-24	Jessica	$2y$10$BksO4yt9AsawDqSJFRK.WOqe7rLXf8/ug2i6LrlKDjv8jgqzZB7XG	Jessica Lopes	\N	\N	2024-04-30 20:22:18	2024-04-30 20:22:18	Fonoaudiologia	\N
-25	Andrea	$2y$10$zZuThg0R/H5nd9AKp/BsKu5LXMgUgra2VXrBLfFrjesdna98xBGAK	Andrea	\N	\N	2024-04-30 20:22:38	2024-04-30 20:22:38	Fonoaudiologia	\N
-23	Naiara	$2y$10$TIHnAnR7ixOVRA8SH2nN0.qY4DObDz0aFPVLQmlSANoiGkblwj60e	Naiara Cavalcante	\N	\N	2024-04-30 20:21:50	2024-04-30 20:21:50	Medicina do Trabalho	\N
-22	Jamile	$2y$10$090Y2ClzHCj9HVTcpJc5j.KzHK9Y4KbbGe8C60fLMwaMRNwLXj0rK	Jamile Teixeira	\N	\N	2024-04-30 20:20:58	2024-04-30 20:20:58	Endocrinologia	\N
-21	Luis	$2y$10$yy3iGlstgwQujQ5k6khvvOCIpBx2UPgmqiMxnrMGtjvm.BSM6cFx6	Luís Carlos	\N	\N	2024-04-30 20:20:29	2024-04-30 20:20:29	Gastro	\N
-20	Wendson	$2y$10$h5E15LCam247dw4LuAGM/eoqoLCcME6O1h2dRaXWHuOyslkpZhP/m	Wendson	\N	\N	2024-04-30 20:19:50	2024-04-30 20:19:50	Urologia	\N
-19	Bruno	$2y$10$ia64YvV4oKiSPvSAja1KYO1772D.CYS6QfdiaIkDtPKA1n0qJDy.O	Bruno Braga	\N	\N	2024-04-30 20:19:22	2024-04-30 20:19:22	Angiologia	\N
-18	Vitor	$2y$10$9TN7QUjxxp9OiwTKK9Ut0uSILY4bKaKCYnoxtkIEy38xDmuydDx5m	Vitor Tadeu	\N	\N	2024-04-30 20:17:34	2024-04-30 20:17:34	Otorrino	\N
-12	Vanessa	$2y$10$aMG6kPdKsbkvD9QQJXhBhuNXQX9bz/jgF8KoDEI1E4KdfijjrhrtO	Vanessa Queiroga	\N	\N	2024-04-30 20:10:33	2024-04-30 20:10:33	Cardiologia	\N
-17	Otavio	$2y$10$iO3iYj9MbAsx51SQbkkC8uDfijcKMQMpqmS4i17UNgBJFCu2WVhYm	Otávio Junior	\N	\N	2024-04-30 20:16:53	2024-04-30 20:16:53	Ortopedia	\N
-13	Kalina	$2y$10$26a0fQkgbuSMvprJwX6M0.knL3LAdgeaL0ij/wC4Ouekp5r2EACy2	Kalina Melo	\N	\N	2024-04-30 20:11:03	2024-04-30 20:11:03	Ultrassonografia	\N
-7	Erivania	$2y$10$hFE9v3bN9KTUpjLi52mt3O.hhHbMGPN/r3Zk0hgXOeuDl3kvQnje2	Erivania	\N	\N	2024-04-30 20:06:23	2024-04-30 20:06:23	Psicologia	\N
-11	Marcio	$2y$10$NpY7riaX1WpVBRlz.xDor.FGfLTSR5dtkYpJo8X0PQ24Rxa6D4DrO	Marcio Queiroga	\N	\N	2024-04-30 20:09:56	2024-04-30 20:32:58	Cardiologia	\N
-16	Marcielia	$2y$10$jayHkkt5NfSknVEf.mYMUe3VLaR0iR28wvU75240rlX5uhODxSarC	Marcielia Rodrigues	\N	\N	2024-04-30 20:16:13	2024-04-30 20:42:04	Neurologia	\N
-10	Severino	$2y$10$aKZx.tZnqx6firUWfdF23Oi4k2ysVlPTKxhka.Ncy1WzIoMUE9wS.	Severino Martins	\N	\N	2024-04-30 20:09:24	2024-04-30 20:48:21	Ginecologia	\N
-8	Thedima	$2y$10$M1HnuT/kGmSLZL9AOcBS..7FsjRC54dXu.AYWiqMWJg0tun/LuRli	Thedima TENNIS	\N	\N	2024-04-30 20:07:00	2024-04-30 20:48:31	Ginecologia	\N
-14	Geudemar	$2y$10$EMGI8m6wPaS3RiSZhhuSB.iTKBkpInsiOuI25TNvHUzbHdrhRC4HW	Geudemar Garcia	\N	\N	2024-04-30 20:12:43	2024-04-30 20:49:35	Ultrassonografia	\N
-15	Ruy	$2y$10$GTB8Tk7UIJUsm0lVyzUbz.ASNBKfwSlPfao76RCNNIwoz4Bb2wwTW	Ruy Suassuna	\N	\N	2024-04-30 20:15:25	2024-04-30 20:51:10	Psiquiatria	\N
-30	Ana	$2y$10$ldc0CRq7c8pBSXdNfyJEleLC8brKT6YV2lO8D9PvY0g8y.CMbSI4a	Ana Débora	\N	\N	2024-04-30 20:24:54	2024-04-30 23:15:26	Dermatologia	\N
-9	Luciana	$2y$10$K9iqryPT57ERkL9KLlsYA.8CTpV5bGiVYm4hA0YbehJidqkjvHUC2	Luciana Ronele	\N	\N	2024-04-30 20:08:51	2024-04-30 20:08:51	Ginecologia	\N
-5	Polyana	$2y$10$CY8h9aIX2E.th4BBh3h.xeqytz4Y7pd.ei83a.ga6vwMcmUAIw70G	Polyana	\N	\N	2024-04-30 19:45:35	2024-04-30 20:47:21	Psicologia	\N
-6	Henrique	$2y$10$9ubB1XIyt/Wi1WxyDndiuuJs8M7KAkh2q19fSzhKaonU4IoFgE7X2	Henrique	\N	\N	2024-04-30 20:05:50	2024-04-30 20:47:34	Psicologia	\N
+32	Dagjane	$2y$10$NwxdIU49lDn2mXPjm.G3Ae995wuoq8DmBkaSw6JLpS1bVvTad9eYq	Dagjane Frazão	\N	\N	2024-04-30 20:26:37	2024-04-30 20:26:37	Pneumologia	Não Definido
+31	Edvaldo	$2y$10$huvxA3JyL.3XyJE3LWi/k.25z/xZ3ZqyVPH4qhwAQWBaldkkvQRDK	Edvaldo Nóbrega	\N	\N	2024-04-30 20:26:06	2024-04-30 20:26:06	Coloproctologia	Não Definido
+29	Raquel	$2y$10$ido84vWg7v4aKDi41KzgF.EbdqLsBeQD9GWF4gTl.EYVn0D78ps8y	Raquel Feliciano	\N	\N	2024-04-30 20:24:32	2024-04-30 20:24:32	Dermatologia	Não Definido
+28	Caroline	$2y$10$LBA/KQMIKQ4yyfcfKyxVsuCnN.NSNIRmBz3MqNHy5Q8jQeIg6yFZ2	Caroline Nunes	\N	\N	2024-04-30 20:24:10	2024-04-30 20:24:10	Fisioterapia	Não Definido
+26	Tassiane	$2y$10$qA3pMVJQx0RsFByYJrXpI.aj13JzpdMB0OY13UCWZH0jfp99dDQ7a	Tassiane Oliveira	\N	\N	2024-04-30 20:23:03	2024-04-30 20:23:03	Pediatria	Não Definido
+27	Adriane	$2y$10$lHUPYmP1pqoIakdo/hjLpunKnt/D8MuuxSJ4x8uIILOaeC/Vo7ClG	Adriane Duarte	\N	\N	2024-04-30 20:23:29	2024-04-30 20:23:29	Pediatria	Não Definido
+24	Jessica	$2y$10$BksO4yt9AsawDqSJFRK.WOqe7rLXf8/ug2i6LrlKDjv8jgqzZB7XG	Jessica Lopes	\N	\N	2024-04-30 20:22:18	2024-04-30 20:22:18	Fonoaudiologia	Não Definido
+25	Andrea	$2y$10$zZuThg0R/H5nd9AKp/BsKu5LXMgUgra2VXrBLfFrjesdna98xBGAK	Andrea	\N	\N	2024-04-30 20:22:38	2024-04-30 20:22:38	Fonoaudiologia	Não Definido
+23	Naiara	$2y$10$TIHnAnR7ixOVRA8SH2nN0.qY4DObDz0aFPVLQmlSANoiGkblwj60e	Naiara Cavalcante	\N	\N	2024-04-30 20:21:50	2024-04-30 20:21:50	Medicina do Trabalho	Não Definido
+22	Jamile	$2y$10$090Y2ClzHCj9HVTcpJc5j.KzHK9Y4KbbGe8C60fLMwaMRNwLXj0rK	Jamile Teixeira	\N	\N	2024-04-30 20:20:58	2024-04-30 20:20:58	Endocrinologia	Não Definido
+21	Luis	$2y$10$yy3iGlstgwQujQ5k6khvvOCIpBx2UPgmqiMxnrMGtjvm.BSM6cFx6	Luís Carlos	\N	\N	2024-04-30 20:20:29	2024-04-30 20:20:29	Gastro	Não Definido
+20	Wendson	$2y$10$h5E15LCam247dw4LuAGM/eoqoLCcME6O1h2dRaXWHuOyslkpZhP/m	Wendson	\N	\N	2024-04-30 20:19:50	2024-04-30 20:19:50	Urologia	Não Definido
+19	Bruno	$2y$10$ia64YvV4oKiSPvSAja1KYO1772D.CYS6QfdiaIkDtPKA1n0qJDy.O	Bruno Braga	\N	\N	2024-04-30 20:19:22	2024-04-30 20:19:22	Angiologia	Não Definido
+18	Vitor	$2y$10$9TN7QUjxxp9OiwTKK9Ut0uSILY4bKaKCYnoxtkIEy38xDmuydDx5m	Vitor Tadeu	\N	\N	2024-04-30 20:17:34	2024-04-30 20:17:34	Otorrino	Não Definido
+12	Vanessa	$2y$10$aMG6kPdKsbkvD9QQJXhBhuNXQX9bz/jgF8KoDEI1E4KdfijjrhrtO	Vanessa Queiroga	\N	\N	2024-04-30 20:10:33	2024-04-30 20:10:33	Cardiologia	Não Definido
+17	Otavio	$2y$10$iO3iYj9MbAsx51SQbkkC8uDfijcKMQMpqmS4i17UNgBJFCu2WVhYm	Otávio Junior	\N	\N	2024-04-30 20:16:53	2024-04-30 20:16:53	Ortopedia	Não Definido
+13	Kalina	$2y$10$26a0fQkgbuSMvprJwX6M0.knL3LAdgeaL0ij/wC4Ouekp5r2EACy2	Kalina Melo	\N	\N	2024-04-30 20:11:03	2024-04-30 20:11:03	Ultrassonografia	Não Definido
+7	Erivania	$2y$10$hFE9v3bN9KTUpjLi52mt3O.hhHbMGPN/r3Zk0hgXOeuDl3kvQnje2	Erivania	\N	\N	2024-04-30 20:06:23	2024-04-30 20:06:23	Psicologia	Não Definido
+11	Marcio	$2y$10$NpY7riaX1WpVBRlz.xDor.FGfLTSR5dtkYpJo8X0PQ24Rxa6D4DrO	Marcio Queiroga	\N	\N	2024-04-30 20:09:56	2024-04-30 20:32:58	Cardiologia	Não Definido
+16	Marcielia	$2y$10$jayHkkt5NfSknVEf.mYMUe3VLaR0iR28wvU75240rlX5uhODxSarC	Marcielia Rodrigues	\N	\N	2024-04-30 20:16:13	2024-04-30 20:42:04	Neurologia	Não Definido
+10	Severino	$2y$10$aKZx.tZnqx6firUWfdF23Oi4k2ysVlPTKxhka.Ncy1WzIoMUE9wS.	Severino Martins	\N	\N	2024-04-30 20:09:24	2024-04-30 20:48:21	Ginecologia	Não Definido
+8	Thedima	$2y$10$M1HnuT/kGmSLZL9AOcBS..7FsjRC54dXu.AYWiqMWJg0tun/LuRli	Thedima TENNIS	\N	\N	2024-04-30 20:07:00	2024-04-30 20:48:31	Ginecologia	Não Definido
+14	Geudemar	$2y$10$EMGI8m6wPaS3RiSZhhuSB.iTKBkpInsiOuI25TNvHUzbHdrhRC4HW	Geudemar Garcia	\N	\N	2024-04-30 20:12:43	2024-04-30 20:49:35	Ultrassonografia	Não Definido
+15	Ruy	$2y$10$GTB8Tk7UIJUsm0lVyzUbz.ASNBKfwSlPfao76RCNNIwoz4Bb2wwTW	Ruy Suassuna	\N	\N	2024-04-30 20:15:25	2024-04-30 20:51:10	Psiquiatria	Não Definido
+30	Ana	$2y$10$ldc0CRq7c8pBSXdNfyJEleLC8brKT6YV2lO8D9PvY0g8y.CMbSI4a	Ana Débora	\N	\N	2024-04-30 20:24:54	2024-04-30 23:15:26	Dermatologia	Não Definido
+9	Luciana	$2y$10$K9iqryPT57ERkL9KLlsYA.8CTpV5bGiVYm4hA0YbehJidqkjvHUC2	Luciana Ronele	\N	\N	2024-04-30 20:08:51	2024-04-30 20:08:51	Ginecologia	Não Definido
+5	Polyana	$2y$10$CY8h9aIX2E.th4BBh3h.xeqytz4Y7pd.ei83a.ga6vwMcmUAIw70G	Polyana	\N	\N	2024-04-30 19:45:35	2024-04-30 20:47:21	Psicologia	Não Definido
+6	Henrique	$2y$10$9ubB1XIyt/Wi1WxyDndiuuJs8M7KAkh2q19fSzhKaonU4IoFgE7X2	Henrique	\N	\N	2024-04-30 20:05:50	2024-04-30 20:47:34	Psicologia	Não Definido
+1	felipe	$2y$10$OThGEX4RRoijkutoQLiYd.8TQIpzv8/n9EEL5j1RwnmJ6oUvqv6Bq	Felipe	\N	Gjm1c7tXUlHu0KSDiGkcRjrEdbsEGUgJ1tKa462aggmJZDdTJGJKkthGRfWB	2024-04-25 18:29:49	2024-05-04 04:30:00	Administrador	Não Definido
+44	Raquel Dias	$2y$10$MfGbJ7nfhCXlU02G0tJDkuK2ueUE/eaIB3NRj4Jb9ZasBojSw8UB.	Raquel Dias	\N	\N	2024-05-04 04:05:34	2024-05-06 11:32:51	Gerente	Administração
+43	Maria	$2y$10$Jwbm2/SY0kfUgkh.LgBtked/8qNQv3smsqMAk5e/dINmnmOUuacAa	Maria	\N	\N	2024-05-04 04:02:36	2024-05-06 11:23:46	Recepcionista	Recepção
+42	Ariane	$2y$10$ACabF1Tuo8Pdn3n/jcc8yuPkjPsbe8PSGWKpGqEn7yuuj5uL2zxp2	Ariane	\N	\N	2024-05-04 04:02:01	2024-05-04 04:32:39	Recepcionista	Recepção
 \.
 
 
 --
--- TOC entry 3626 (class 0 OID 16684)
+-- TOC entry 3626 (class 0 OID 16863)
 -- Dependencies: 223
 -- Data for Name: consultas; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.consultas (id, paciente_id, medico_id, prontuario_id, data_hora, observacoes, status) FROM stdin;
-5	6	6	5	2024-05-03 14:00:00	Exame de Sangue	Agendada
 6	7	5	6	2024-05-02 15:30:00	Exame de Rotina	Agendada
 7	7	30	7	2024-05-03 09:20:00	Problema de inpigem na perna	Agendada
+8	7	6	8	2024-05-08 15:15:00	Exame de Rotina	Agendada
+5	6	6	5	2024-05-03 14:00:00	Exame de Rotina	Concluida
 \.
 
 
 --
--- TOC entry 3628 (class 0 OID 16690)
+-- TOC entry 3628 (class 0 OID 16869)
 -- Dependencies: 225
 -- Data for Name: failed_jobs; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2454,7 +2986,7 @@ COPY public.failed_jobs (id, uuid, connection, queue, payload, exception, failed
 
 
 --
--- TOC entry 3630 (class 0 OID 16697)
+-- TOC entry 3630 (class 0 OID 16876)
 -- Dependencies: 227
 -- Data for Name: migrations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2470,19 +3002,19 @@ COPY public.migrations (id, migration, batch) FROM stdin;
 
 
 --
--- TOC entry 3632 (class 0 OID 16701)
+-- TOC entry 3632 (class 0 OID 16880)
 -- Dependencies: 229
 -- Data for Name: paciente; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.paciente (id, "Nome", "Data_Nascimento", "Genero", "Endereco", "Telefone", "Email", created_at, updated_at) FROM stdin;
-6	Hugo Severino Diego Santos	2002-05-09	Masculino	Rua Creuza Josefa Morato, 977, Intermares, Cabedelo	(83) 98813-3914	hugo91@rafaeladson.com	2024-04-30 21:00:11	2024-04-30 21:00:11
-7	Joao Teste	1998-11-04	Masculino	Rua das quintas, 109, Centro, Santo Antônio	(99) 99999-9999	jfelipe@gmail.com	2024-04-30 22:58:32	2024-04-30 22:58:32
+COPY public.paciente (id, "Nome", "Data_Nascimento", "Genero", "Endereco", "Telefone", "Email", created_at, updated_at, "Cpf") FROM stdin;
+7	Joao Teste	1998-11-04	Masculino	Rua das quintas, 109, Centro, Santo Antônio	(99) 99999-9999	jfelipe@gmail.com	2024-04-30 22:58:32	2024-04-30 22:58:32	123.456.789-00
+6	Hugo Severino Diego Santos	2002-05-09	Masculino	Rua Creuza Josefa Morato, 977, Intermares, Cabedelo	(83) 98813-3914	hugo91@rafaeladson.com	2024-04-30 21:00:11	2024-04-30 21:00:11	123.456.789-01
 \.
 
 
 --
--- TOC entry 3634 (class 0 OID 16707)
+-- TOC entry 3634 (class 0 OID 16886)
 -- Dependencies: 231
 -- Data for Name: password_resets; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2492,7 +3024,7 @@ COPY public.password_resets (email, token, created_at) FROM stdin;
 
 
 --
--- TOC entry 3635 (class 0 OID 16712)
+-- TOC entry 3635 (class 0 OID 16891)
 -- Dependencies: 232
 -- Data for Name: personal_access_tokens; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2502,7 +3034,7 @@ COPY public.personal_access_tokens (id, tokenable_type, tokenable_id, name, toke
 
 
 --
--- TOC entry 3637 (class 0 OID 16718)
+-- TOC entry 3637 (class 0 OID 16897)
 -- Dependencies: 234
 -- Data for Name: prontuarios; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2511,11 +3043,12 @@ COPY public.prontuarios (id, paciente_id, medico_id, registro_medico) FROM stdin
 5	6	6	Diagnóstico...
 6	7	5	Paciente apresentou nauseas e dores de cabeça
 7	7	30	Paciente reclamou de coceira e foi passado pomada
+8	7	6	Diagnóstico...
 \.
 
 
 --
--- TOC entry 3639 (class 0 OID 16724)
+-- TOC entry 3639 (class 0 OID 16903)
 -- Dependencies: 236
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2526,7 +3059,7 @@ COPY public.users (id, name, email, email_verified_at, password, remember_token,
 
 
 --
--- TOC entry 3659 (class 0 OID 0)
+-- TOC entry 3658 (class 0 OID 0)
 -- Dependencies: 210
 -- Name: admin_menu_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2535,52 +3068,52 @@ SELECT pg_catalog.setval('public.admin_menu_id_seq', 16, true);
 
 
 --
--- TOC entry 3660 (class 0 OID 0)
+-- TOC entry 3659 (class 0 OID 0)
 -- Dependencies: 212
 -- Name: admin_operation_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.admin_operation_log_id_seq', 1454, true);
+SELECT pg_catalog.setval('public.admin_operation_log_id_seq', 2042, true);
 
 
 --
--- TOC entry 3661 (class 0 OID 0)
+-- TOC entry 3660 (class 0 OID 0)
 -- Dependencies: 214
 -- Name: admin_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.admin_permissions_id_seq', 11, true);
+SELECT pg_catalog.setval('public.admin_permissions_id_seq', 14, true);
 
 
 --
--- TOC entry 3662 (class 0 OID 0)
+-- TOC entry 3661 (class 0 OID 0)
 -- Dependencies: 219
 -- Name: admin_roles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.admin_roles_id_seq', 2, true);
+SELECT pg_catalog.setval('public.admin_roles_id_seq', 4, true);
 
 
 --
--- TOC entry 3663 (class 0 OID 0)
+-- TOC entry 3662 (class 0 OID 0)
 -- Dependencies: 222
 -- Name: admin_users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.admin_users_id_seq', 32, true);
+SELECT pg_catalog.setval('public.admin_users_id_seq', 44, true);
 
 
 --
--- TOC entry 3664 (class 0 OID 0)
+-- TOC entry 3663 (class 0 OID 0)
 -- Dependencies: 224
 -- Name: consultas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.consultas_id_seq', 7, true);
+SELECT pg_catalog.setval('public.consultas_id_seq', 8, true);
 
 
 --
--- TOC entry 3665 (class 0 OID 0)
+-- TOC entry 3664 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: failed_jobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2589,7 +3122,7 @@ SELECT pg_catalog.setval('public.failed_jobs_id_seq', 1, false);
 
 
 --
--- TOC entry 3666 (class 0 OID 0)
+-- TOC entry 3665 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2598,7 +3131,7 @@ SELECT pg_catalog.setval('public.migrations_id_seq', 6, true);
 
 
 --
--- TOC entry 3667 (class 0 OID 0)
+-- TOC entry 3666 (class 0 OID 0)
 -- Dependencies: 230
 -- Name: paciente_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2607,7 +3140,7 @@ SELECT pg_catalog.setval('public.paciente_id_seq', 7, true);
 
 
 --
--- TOC entry 3668 (class 0 OID 0)
+-- TOC entry 3667 (class 0 OID 0)
 -- Dependencies: 233
 -- Name: personal_access_tokens_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2616,16 +3149,16 @@ SELECT pg_catalog.setval('public.personal_access_tokens_id_seq', 1, false);
 
 
 --
--- TOC entry 3669 (class 0 OID 0)
+-- TOC entry 3668 (class 0 OID 0)
 -- Dependencies: 235
 -- Name: prontuarios_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.prontuarios_id_seq', 7, true);
+SELECT pg_catalog.setval('public.prontuarios_id_seq', 8, true);
 
 
 --
--- TOC entry 3670 (class 0 OID 0)
+-- TOC entry 3669 (class 0 OID 0)
 -- Dependencies: 237
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -2634,7 +3167,7 @@ SELECT pg_catalog.setval('public.users_id_seq', 1, true);
 
 
 --
--- TOC entry 3422 (class 2606 OID 16743)
+-- TOC entry 3422 (class 2606 OID 16922)
 -- Name: admin_menu admin_menu_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2643,7 +3176,7 @@ ALTER TABLE ONLY public.admin_menu
 
 
 --
--- TOC entry 3424 (class 2606 OID 16745)
+-- TOC entry 3424 (class 2606 OID 16924)
 -- Name: admin_operation_log admin_operation_log_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2652,7 +3185,7 @@ ALTER TABLE ONLY public.admin_operation_log
 
 
 --
--- TOC entry 3427 (class 2606 OID 16747)
+-- TOC entry 3427 (class 2606 OID 16926)
 -- Name: admin_permissions admin_permissions_name_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2661,7 +3194,7 @@ ALTER TABLE ONLY public.admin_permissions
 
 
 --
--- TOC entry 3429 (class 2606 OID 16749)
+-- TOC entry 3429 (class 2606 OID 16928)
 -- Name: admin_permissions admin_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2670,7 +3203,7 @@ ALTER TABLE ONLY public.admin_permissions
 
 
 --
--- TOC entry 3431 (class 2606 OID 16751)
+-- TOC entry 3431 (class 2606 OID 16930)
 -- Name: admin_permissions admin_permissions_slug_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2679,7 +3212,7 @@ ALTER TABLE ONLY public.admin_permissions
 
 
 --
--- TOC entry 3436 (class 2606 OID 16753)
+-- TOC entry 3436 (class 2606 OID 16932)
 -- Name: admin_roles admin_roles_name_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2688,7 +3221,7 @@ ALTER TABLE ONLY public.admin_roles
 
 
 --
--- TOC entry 3438 (class 2606 OID 16755)
+-- TOC entry 3438 (class 2606 OID 16934)
 -- Name: admin_roles admin_roles_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2697,7 +3230,7 @@ ALTER TABLE ONLY public.admin_roles
 
 
 --
--- TOC entry 3440 (class 2606 OID 16757)
+-- TOC entry 3440 (class 2606 OID 16936)
 -- Name: admin_roles admin_roles_slug_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2706,7 +3239,7 @@ ALTER TABLE ONLY public.admin_roles
 
 
 --
--- TOC entry 3443 (class 2606 OID 16759)
+-- TOC entry 3443 (class 2606 OID 16938)
 -- Name: admin_users admin_users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2715,7 +3248,7 @@ ALTER TABLE ONLY public.admin_users
 
 
 --
--- TOC entry 3445 (class 2606 OID 16761)
+-- TOC entry 3445 (class 2606 OID 16940)
 -- Name: admin_users admin_users_username_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2724,7 +3257,7 @@ ALTER TABLE ONLY public.admin_users
 
 
 --
--- TOC entry 3447 (class 2606 OID 16763)
+-- TOC entry 3447 (class 2606 OID 16942)
 -- Name: consultas consultas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2733,7 +3266,7 @@ ALTER TABLE ONLY public.consultas
 
 
 --
--- TOC entry 3449 (class 2606 OID 16765)
+-- TOC entry 3449 (class 2606 OID 16944)
 -- Name: failed_jobs failed_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2742,7 +3275,7 @@ ALTER TABLE ONLY public.failed_jobs
 
 
 --
--- TOC entry 3451 (class 2606 OID 16767)
+-- TOC entry 3451 (class 2606 OID 16946)
 -- Name: failed_jobs failed_jobs_uuid_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2751,7 +3284,7 @@ ALTER TABLE ONLY public.failed_jobs
 
 
 --
--- TOC entry 3453 (class 2606 OID 16769)
+-- TOC entry 3453 (class 2606 OID 16948)
 -- Name: migrations migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2760,7 +3293,7 @@ ALTER TABLE ONLY public.migrations
 
 
 --
--- TOC entry 3455 (class 2606 OID 16771)
+-- TOC entry 3455 (class 2606 OID 16950)
 -- Name: paciente paciente_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2769,7 +3302,7 @@ ALTER TABLE ONLY public.paciente
 
 
 --
--- TOC entry 3458 (class 2606 OID 16773)
+-- TOC entry 3458 (class 2606 OID 16952)
 -- Name: personal_access_tokens personal_access_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2778,7 +3311,7 @@ ALTER TABLE ONLY public.personal_access_tokens
 
 
 --
--- TOC entry 3460 (class 2606 OID 16775)
+-- TOC entry 3460 (class 2606 OID 16954)
 -- Name: personal_access_tokens personal_access_tokens_token_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2787,7 +3320,7 @@ ALTER TABLE ONLY public.personal_access_tokens
 
 
 --
--- TOC entry 3463 (class 2606 OID 16777)
+-- TOC entry 3463 (class 2606 OID 16956)
 -- Name: prontuarios prontuarios_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2796,7 +3329,7 @@ ALTER TABLE ONLY public.prontuarios
 
 
 --
--- TOC entry 3465 (class 2606 OID 16779)
+-- TOC entry 3465 (class 2606 OID 16958)
 -- Name: users users_email_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2805,7 +3338,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- TOC entry 3467 (class 2606 OID 16781)
+-- TOC entry 3467 (class 2606 OID 16960)
 -- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2814,7 +3347,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- TOC entry 3425 (class 1259 OID 16782)
+-- TOC entry 3425 (class 1259 OID 16961)
 -- Name: admin_operation_log_user_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2822,7 +3355,7 @@ CREATE INDEX admin_operation_log_user_id_index ON public.admin_operation_log USI
 
 
 --
--- TOC entry 3432 (class 1259 OID 16783)
+-- TOC entry 3432 (class 1259 OID 16962)
 -- Name: admin_role_menu_role_id_menu_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2830,7 +3363,7 @@ CREATE INDEX admin_role_menu_role_id_menu_id_index ON public.admin_role_menu USI
 
 
 --
--- TOC entry 3433 (class 1259 OID 16784)
+-- TOC entry 3433 (class 1259 OID 16963)
 -- Name: admin_role_permissions_role_id_permission_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2838,7 +3371,7 @@ CREATE INDEX admin_role_permissions_role_id_permission_id_index ON public.admin_
 
 
 --
--- TOC entry 3434 (class 1259 OID 16785)
+-- TOC entry 3434 (class 1259 OID 16964)
 -- Name: admin_role_users_role_id_user_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2846,7 +3379,7 @@ CREATE INDEX admin_role_users_role_id_user_id_index ON public.admin_role_users U
 
 
 --
--- TOC entry 3441 (class 1259 OID 16786)
+-- TOC entry 3441 (class 1259 OID 16965)
 -- Name: admin_user_permissions_user_id_permission_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2854,7 +3387,7 @@ CREATE INDEX admin_user_permissions_user_id_permission_id_index ON public.admin_
 
 
 --
--- TOC entry 3456 (class 1259 OID 16787)
+-- TOC entry 3456 (class 1259 OID 16966)
 -- Name: password_resets_email_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2862,7 +3395,7 @@ CREATE INDEX password_resets_email_index ON public.password_resets USING btree (
 
 
 --
--- TOC entry 3461 (class 1259 OID 16788)
+-- TOC entry 3461 (class 1259 OID 16967)
 -- Name: personal_access_tokens_tokenable_type_tokenable_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -2870,7 +3403,7 @@ CREATE INDEX personal_access_tokens_tokenable_type_tokenable_id_index ON public.
 
 
 --
--- TOC entry 3471 (class 2606 OID 16789)
+-- TOC entry 3471 (class 2606 OID 16968)
 -- Name: prontuarios fk_medico; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2879,7 +3412,7 @@ ALTER TABLE ONLY public.prontuarios
 
 
 --
--- TOC entry 3468 (class 2606 OID 16794)
+-- TOC entry 3468 (class 2606 OID 16973)
 -- Name: consultas fk_medico; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2888,7 +3421,7 @@ ALTER TABLE ONLY public.consultas
 
 
 --
--- TOC entry 3472 (class 2606 OID 16799)
+-- TOC entry 3472 (class 2606 OID 16978)
 -- Name: prontuarios fk_paciente; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2897,7 +3430,7 @@ ALTER TABLE ONLY public.prontuarios
 
 
 --
--- TOC entry 3469 (class 2606 OID 16804)
+-- TOC entry 3469 (class 2606 OID 16983)
 -- Name: consultas fk_paciente; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2906,7 +3439,7 @@ ALTER TABLE ONLY public.consultas
 
 
 --
--- TOC entry 3470 (class 2606 OID 16809)
+-- TOC entry 3470 (class 2606 OID 16988)
 -- Name: consultas fk_prontuario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -2914,326 +3447,9 @@ ALTER TABLE ONLY public.consultas
     ADD CONSTRAINT fk_prontuario FOREIGN KEY (prontuario_id) REFERENCES public.prontuarios(id);
 
 
--- Completed on 2024-05-02 16:15:27 -03
+-- Completed on 2024-05-08 15:44:08 -03
 
 --
 -- PostgreSQL database dump complete
---
-
---
--- Database "postgres" dump
---
-
-\connect postgres
-
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 14.11 (Ubuntu 14.11-0ubuntu0.22.04.1)
--- Dumped by pg_dump version 14.11 (Ubuntu 14.11-0ubuntu0.22.04.1)
-
--- Started on 2024-05-02 16:15:28 -03
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
--- Completed on 2024-05-02 16:15:28 -03
-
---
--- PostgreSQL database dump complete
---
-
---
--- Database "student" dump
---
-
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 14.11 (Ubuntu 14.11-0ubuntu0.22.04.1)
--- Dumped by pg_dump version 14.11 (Ubuntu 14.11-0ubuntu0.22.04.1)
-
--- Started on 2024-05-02 16:15:28 -03
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- TOC entry 3496 (class 1262 OID 16541)
--- Name: student; Type: DATABASE; Schema: -; Owner: postgres
---
-
-CREATE DATABASE student WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE = 'pt_BR.UTF-8';
-
-
-ALTER DATABASE student OWNER TO postgres;
-
-\connect student
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
-SET default_tablespace = '';
-
-SET default_table_access_method = heap;
-
---
--- TOC entry 212 (class 1259 OID 16545)
--- Name: student_info; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public.student_info (
-    id integer NOT NULL,
-    name character varying(20) NOT NULL,
-    roll integer NOT NULL,
-    class character varying(3) NOT NULL,
-    city character varying(15) NOT NULL,
-    pcontact character varying(11) NOT NULL,
-    photo character varying(50) NOT NULL,
-    datetime timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
-);
-
-
-ALTER TABLE public.student_info OWNER TO postgres;
-
---
--- TOC entry 209 (class 1259 OID 16542)
--- Name: student_info_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE public.student_info_id_seq
-    START WITH 48
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.student_info_id_seq OWNER TO postgres;
-
---
--- TOC entry 211 (class 1259 OID 16544)
--- Name: student_info_id_seq1; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE public.student_info_id_seq1
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.student_info_id_seq1 OWNER TO postgres;
-
---
--- TOC entry 3497 (class 0 OID 0)
--- Dependencies: 211
--- Name: student_info_id_seq1; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE public.student_info_id_seq1 OWNED BY public.student_info.id;
-
-
---
--- TOC entry 214 (class 1259 OID 16553)
--- Name: users; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public.users (
-    id integer NOT NULL,
-    name character varying(50) NOT NULL,
-    email character varying(50) NOT NULL,
-    username character varying(50) NOT NULL,
-    password character varying(100) NOT NULL,
-    photo character varying(50) NOT NULL,
-    status character varying(12) NOT NULL,
-    datetime timestamp with time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
-);
-
-
-ALTER TABLE public.users OWNER TO postgres;
-
---
--- TOC entry 210 (class 1259 OID 16543)
--- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE public.users_id_seq
-    START WITH 21
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.users_id_seq OWNER TO postgres;
-
---
--- TOC entry 213 (class 1259 OID 16552)
--- Name: users_id_seq1; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE public.users_id_seq1
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.users_id_seq1 OWNER TO postgres;
-
---
--- TOC entry 3498 (class 0 OID 0)
--- Dependencies: 213
--- Name: users_id_seq1; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE public.users_id_seq1 OWNED BY public.users.id;
-
-
---
--- TOC entry 3338 (class 2604 OID 16548)
--- Name: student_info id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.student_info ALTER COLUMN id SET DEFAULT nextval('public.student_info_id_seq1'::regclass);
-
-
---
--- TOC entry 3340 (class 2604 OID 16556)
--- Name: users id; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq1'::regclass);
-
-
---
--- TOC entry 3488 (class 0 OID 16545)
--- Dependencies: 212
--- Data for Name: student_info; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.student_info (id, name, roll, class, city, pcontact, photo, datetime) FROM stdin;
-41	Ajharul Islam	444433	1st	House#15, Ward#	01944444444	4444332020-06-06-06-58.jpg	2020-06-06 13:17:58-03
-43	Majhar Rakib	444439	2nd	House#1eww	01812888858	4444392020-06-06-06-53.jpg	2020-06-06 13:18:53-03
-44	kutub ussin	443322	4th	Dhaka, Banglade	01797159600	4433222020-06-06-06-28.jpg	2020-06-06 13:19:28-03
-45	Shirin Akter	443342	2nd	Dhaka, Banglade	01797159600	4433422020-06-06-06-51.jpg	2020-06-06 13:19:51-03
-47	utfol kumar das	443353	2nd	Dhaka, Banglade	01814270541	4433532020-06-06-06-32.jpg	2020-06-06 13:21:32-03
-\.
-
-
---
--- TOC entry 3490 (class 0 OID 16553)
--- Dependencies: 214
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
---
-
-COPY public.users (id, name, email, username, password, photo, status, datetime) FROM stdin;
-10	Ajharul Islam	dedke@gmail.com	sdsdq232323	1bbd886460827015e5d605ed44252251	sdsdq2323ee23.jpg	inactive	2020-06-08 08:49:10-03
-14	Majhar Rakib	ded222ke@gmail.com	yescablessdwwewe	618e02fc80fa3a0bd41d65f5b54a11fc50426d12	yescablessdwwewe.jpg	inactive	2020-06-08 08:49:10-03
-15	Ajharul Islam	sdsdsdsdsdsd@gmail.com	mdrashed38	618e02fc80fa3a0bd41d65f5b54a11fc50426d12	mdrashed38.jpg	inactive	2020-06-08 08:49:10-03
-16	Ajharul Islam	rajrashed42s1@gmail.com	yescablessasasas	618e02fc80fa3a0bd41d65f5b54a11fc50426d12	yescablessasasas.jpg	inactive	2020-06-08 08:49:10-03
-17	Ajharul Islam	rajrashed42sdsd1@gmail.com	yescables133232323	618e02fc80fa3a0bd41d65f5b54a11fc50426d12	yescables133232323.jpg	inactive	2020-06-08 08:49:10-03
-18	Ajharul Islam	djforhad@gmail.com	rasheddd	618e02fc80fa3a0bd41d65f5b54a11fc50426d12	rasheddd21-06-20-06-2020steo.jpg	active	2020-06-08 08:49:10-03
-20	Ajharul Islam	janatakumar@gmail.com	kumarkosl	618e02fc80fa3a0bd41d65f5b54a11fc50426d12	kumarkosl.jpg	inactive	2020-06-08 08:49:10-03
-19	kus	kus@gmail.com	kus	202cb962ac59075b964b07152d234b70	kus12345.jpg	inactive	2020-06-08 08:49:10-03
-2	pontes	felipe@mail.com	jfelipepp	01cfcd4f6b8770febfb40cb906715822	kumarkosl.jpg	active	2024-04-26 11:41:50.459068-03
-\.
-
-
---
--- TOC entry 3499 (class 0 OID 0)
--- Dependencies: 209
--- Name: student_info_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.student_info_id_seq', 48, false);
-
-
---
--- TOC entry 3500 (class 0 OID 0)
--- Dependencies: 211
--- Name: student_info_id_seq1; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.student_info_id_seq1', 1, false);
-
-
---
--- TOC entry 3501 (class 0 OID 0)
--- Dependencies: 210
--- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.users_id_seq', 21, false);
-
-
---
--- TOC entry 3502 (class 0 OID 0)
--- Dependencies: 213
--- Name: users_id_seq1; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.users_id_seq1', 2, true);
-
-
---
--- TOC entry 3343 (class 2606 OID 16551)
--- Name: student_info student_info_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.student_info
-    ADD CONSTRAINT student_info_pkey PRIMARY KEY (id);
-
-
---
--- TOC entry 3345 (class 2606 OID 16559)
--- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.users
-    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
-
-
--- Completed on 2024-05-02 16:15:28 -03
-
---
--- PostgreSQL database dump complete
---
-
--- Completed on 2024-05-02 16:15:28 -03
-
---
--- PostgreSQL database cluster dump complete
 --
 

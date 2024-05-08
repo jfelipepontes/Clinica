@@ -30,6 +30,7 @@ class ConsultaController extends AdminController
 
         $grid->filter(function($filter){
             $filter->disableIdFilter();
+            $filter->like('paciente.Cpf', 'CPF');
             $filter->like('paciente.Nome', 'Paciente');
             $filter->like('medico.name', 'Doutor');
             $filter->date('data_hora', 'Data');
@@ -53,6 +54,7 @@ class ConsultaController extends AdminController
             $grid->model()->where('medico_id', Auth::id());
         }
 
+        $grid->column('medico.numero_sala', __('Sala'));
         $grid->column('paciente.Nome', __('Paciente'));
         $grid->column('medico.name', __('Medico'));
         $grid->column('medico.especialidade', __('Especialidade'));
@@ -80,6 +82,7 @@ class ConsultaController extends AdminController
     {
         $show = new Show(Consulta::findOrFail($id));
 
+        $show->field('paciente.Cpf', __('CPF'));
         $show->field('paciente.Nome', __('Paciente'));
         $show->field('medico.name', __('Medico'));
         $show->field('medico.especialidade', __('Especialidade'));

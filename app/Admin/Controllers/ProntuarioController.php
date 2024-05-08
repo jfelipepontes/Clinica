@@ -30,6 +30,7 @@ class ProntuarioController extends AdminController
     $grid->filter(function($filter){
         $filter->disableIdFilter();
         $filter->like('id', 'Código');
+        $filter->like('paciente.Cpf', 'CPF');
         $filter->like('paciente.Nome', 'Paciente');
         $filter->like('medico.name', 'Doutor');
     });
@@ -51,6 +52,7 @@ class ProntuarioController extends AdminController
     }
 
     $grid->column('id', __('Código'))->sortable();
+    $grid->column('paciente.Cpf', __('CPF'));
     $grid->column('paciente.Nome', __('Paciente'));
     $grid->column('medico.name', __('Doutor'));
     $grid->column('registro_medico', __('Registro Médico'));
@@ -77,6 +79,7 @@ class ProntuarioController extends AdminController
         $show = new Show(Prontuario::findOrFail($id));
 
         $show->field('id', __('Código'));
+        // $show->field('paciente.Cpf', __('CPF'));
         $show->field('paciente.Nome', __('Paciente'));
         $show->field('paciente.Data_Nascimento', __('Data de Nascimento'))->as(function ($data_nascimento) {
             return date('d/m/Y', strtotime($data_nascimento));
